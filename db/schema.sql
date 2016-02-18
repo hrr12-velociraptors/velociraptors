@@ -11,7 +11,7 @@ CREATE TABLE tutors (
 
 CREATE TABLE sessions (
   sessionId INT PRIMARY KEY AUTO_INCREMENT,
-  userId INT, 
+  userId INT,
   topic VARCHAR(20) NOT NULL,
   description VARCHAR(100) NOT NULL,
   startTime DATETIME NOT NULL,

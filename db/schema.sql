@@ -1,4 +1,3 @@
-DROP DATABASE learnItNowdb;
 Create DATABASE learnItNowdb;
 
 USE learnItNowdb;
@@ -12,12 +11,13 @@ CREATE TABLE tutors (
 
 CREATE TABLE sessions (
   sessionId INT PRIMARY KEY AUTO_INCREMENT,
-  userId INT FOREIGN KEY, 
+  userId INT, 
   topic VARCHAR(20) NOT NULL,
   description VARCHAR(100) NOT NULL,
   startTime DATETIME NOT NULL,
   link TEXT NOT NULL,
-  status BOOLEAN NOT NULL
+  status BOOLEAN NOT NULL,
+  FOREIGN KEY (userId) REFERENCES tutors(userId)
 );
 
 

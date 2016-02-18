@@ -4,10 +4,10 @@
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
-
+  - __Product Owner__: Kelly von Borstel
+  - __Scrum Master__: Devonte MacGlashan
+  - __Development Team Members__: Maz Atighi, Pierre Teo, Pedro Torres-Picon
+  
 ## Table of Contents
 
 1. [Usage](#Usage)

@@ -18,27 +18,38 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  TechTalk30 (T3) or LearnItNow
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  One-on-one knowledge sharing for programming.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  LearnItNow allows programming students to book 1-on-1 sessions with tutors around specific topics or issues. Tutors can post topics they are comfortable with and students browse all available sessions to find ones that meet their needs. 
 
 ## Problem ##
   > Describe the problem your product solves.
+  It is hard for people to find one-on-one help when learning a new topic, and even harder to reach out and schedule a session. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  LearnItNow makes it easy for developers to find and sign up for sessions on a specific topic they want to learn about, while also providing a way for experienced developers to practice topics by teaching others. 
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+"We were incredibly frustrated by how hard it was to find one-on-one mentorship, so we decided to make it super easy and fun." - Kelly, CEO
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+Just go to www.learnitnow.com and find a session that is relevant for you, sign up and you're done! No login required. 
+
+If you want to share your knowledge, you just have to go through a quick sign up process and then you will be able to quickly and easily start new sessions. 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+"I searched everywhere for someone to explain reduce to me, and I finally found it in LearnItNow. This changed my life!" - Customer
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+Struggling with a technology topic? Visit LearnItNow.com TODAY!

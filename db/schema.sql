@@ -15,7 +15,7 @@ CREATE TABLE sessions (
   userId INT FOREIGN KEY, 
   topic VARCHAR(20) NOT NULL,
   description VARCHAR(100) NOT NULL,
-  duration INT NOT NULL,
+  startTime DATETIME NOT NULL,
   link TEXT NOT NULL,
   status BOOLEAN NOT NULL
 );

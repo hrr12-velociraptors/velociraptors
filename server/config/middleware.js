@@ -9,9 +9,9 @@ module.exports = function(app, express) {
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
 
-  app.use('/users', userRouter);
-  app.use('/sessions', sessionRouter);
+  // app.use('/users', userRouter);
+  // app.use('/sessions', sessionRouter);
 
-  require('../users/userRoutes.js')(userRouter);
-  require('../sessions/sessionRoutes.js')(sessionRouter);
+  // require('../users/userRoutes.js')(userRouter);
+  // require('../sessions/sessionRoutes.js')(sessionRouter);
 };

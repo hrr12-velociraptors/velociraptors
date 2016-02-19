@@ -1,4 +1,4 @@
-
+var User = require('../../db/models').Session;
 
 module.exports.addSessions = function(req, res){
 

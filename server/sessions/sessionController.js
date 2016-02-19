@@ -1,6 +1,6 @@
-var User = require('../../db/models').Session;
+var Session = require('../../db/models').Session;
 
-module.exports.addSessions = function(req, res){
+module.exports.addSession = function(req, res){
   Session.create(req.body).then(function(session) {
     res.sendStatus(201);
   })

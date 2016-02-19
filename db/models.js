@@ -32,7 +32,7 @@ User.sync();
 Session.sync();
 
 exports.User = User;
-exports.Message = Message;
+exports.Session = Session;
 
 
 

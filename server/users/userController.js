@@ -22,26 +22,27 @@ module.exports.getUsers = function(req, res){
 	// return all users
   User.findAll().then(function(users) {
     if(!users) {
-      console.log('No users found');
+      console.log('No users found.');
+      res.end();
     } else {
       res.json(users);
     }
   })
   .catch(function(err) {
-    console.log('Error getting users', err);
+    console.log('Error getting users:', err);
   });
 };
 
 module.exports.signin = function(req, res){
 	// log in and set session
 		// wrong user/pass data
-}
+};
 
 module.exports.signUp = function(req, res){
 	// add a new user to database
 		// log them in 
-}
+};
 
 module.exports.checkAuth = function(req, res, next){
 	// returns if a user is logged in or not
-}
+};

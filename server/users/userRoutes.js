@@ -7,10 +7,10 @@ module.exports = function(app){
 	app.get('/', userController.getUsers);
 
 	// // '/signIn'
-	// app.post('/signIn', userController.signIn);
+	app.post('/signIn', passport.authenticate('local', { session: true }), userController.signIn);
 
-	// // '/signUp'
-	// app.post('/signUp', userController.signUp);
+	// '/signOut'
+	app.post('/signOut', userController.signOut);
 	
 	// // '/signedIn'
 	// app.get('/signedIn', userController.checkAuth);

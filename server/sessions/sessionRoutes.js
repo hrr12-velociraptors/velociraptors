@@ -6,6 +6,4 @@ module.exports = function(app) {
   app.post('/', sessionController.addSession);
   app.delete('/', sessionController.deleteSession);
 
-  app.get('/:id', sessionController.getSession);
-
 };

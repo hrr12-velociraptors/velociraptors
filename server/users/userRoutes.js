@@ -1,4 +1,5 @@
 var userController = require('./userController');
+var passport = require('passport');
 
 module.exports = function(app){
 
@@ -6,12 +7,12 @@ module.exports = function(app){
 	app.post('/', userController.newUser);
 	app.get('/', userController.getUsers);
 
-	// '/signIn'
-	app.post('/signIn', userController.signIn);
+	// // '/signIn'
+	app.post('/signIn', passport.authenticate('local', { session: true }), userController.signIn);
 
-	// '/signUp'
-	app.post('/signUp', userController.signUp);
+	// '/signOut'
+	app.post('/signOut', userController.signOut);
 	
-	// '/signedIn'
-	app.get('/signedIn', userController.checkAuth);
-}
+	// // '/signedIn'
+	// app.get('/signedIn', userController.checkAuth);
+};

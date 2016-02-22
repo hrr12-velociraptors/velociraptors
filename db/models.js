@@ -4,8 +4,11 @@
 
 var Sequelize = require('sequelize');
 var orm = new Sequelize('learnItNowdb', 'root', '');
+<<<<<<< HEAD
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
+=======
+>>>>>>> d20db9f2f345f3a26f64d5a8aecdee47b879c420
 
 var User = orm.define('User', {
   username: { 
@@ -17,6 +20,7 @@ var User = orm.define('User', {
     unique: true
   },
   password: Sequelize.STRING
+<<<<<<< HEAD
 }, {
   instanceMethods: {
     hashPassword: function() {
@@ -30,6 +34,8 @@ var User = orm.define('User', {
 
 User.beforeCreate(function(user, options) {
   user.password = user.hashPassword();
+=======
+>>>>>>> d20db9f2f345f3a26f64d5a8aecdee47b879c420
 });
 
 var Session = orm.define('Session', {
@@ -47,7 +53,11 @@ User.sync();
 Session.sync();
 
 exports.User = User;
+<<<<<<< HEAD
 exports.Session = Session;
+=======
+exports.Message = Message;
+>>>>>>> d20db9f2f345f3a26f64d5a8aecdee47b879c420
 
 
 

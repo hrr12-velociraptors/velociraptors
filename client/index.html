@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn it Now!</title>
+  <link href='css/main.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+    <header class="mainHead">
+      <h1 class="header">Learn it Now!</h1>
+      <button class="signButton button">Sign in</button>
+    </header>
+    <div ng-view></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="createSession/sessionController.js"></script>
+  <script src="auth/signinController.js"></script>
+  <script src="auth/signupController.js"></script>
+  <script src="mainFactory.js"></script>
+</body>
+</html>

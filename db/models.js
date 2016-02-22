@@ -4,6 +4,8 @@
 
 var Sequelize = require('sequelize');
 var orm = new Sequelize('learnItNowdb', 'root', '');
+var bcrypt = require('bcrypt-nodejs');
+var Promise = require('bluebird');
 
 var User = orm.define('User', {
   username: { 
@@ -15,6 +17,19 @@ var User = orm.define('User', {
     unique: true
   },
   password: Sequelize.STRING
+}, {
+  instanceMethods: {
+    hashPassword: function() {
+      return bcrypt.hashSync(this.password);
+    },
+    validPassword: function(pass) {
+      return bcrypt.compareSync(pass, this.password);
+    }
+  }
+});
+
+User.beforeCreate(function(user, options) {
+  user.password = user.hashPassword();
 });
 
 var Session = orm.define('Session', {
@@ -32,7 +47,7 @@ User.sync();
 Session.sync();
 
 exports.User = User;
-exports.Message = Message;
+exports.Session = Session;
 
 
 

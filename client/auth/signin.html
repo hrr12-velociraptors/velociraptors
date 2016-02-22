@@ -1,0 +1,17 @@
+
+<div ng-app="myApp">
+<div id='signin'>
+  <h1>Sign In</h1>
+  <form name="signinForm" ng-controller="mainController" ng-submit='signin()'>
+    <label>Email </label>
+    <input type='text' ng-model='user.email' required>
+    <br>
+    <br>
+    <label>Password </label>
+    <input type="password" ng-model='user.password' required><br>
+    <br>
+    <button class="submit">Sign in</button>
+  </form>
+  <p>If you do not have an account, <a href="#/signup">sign up</a> here.  
+</div>
+</div>

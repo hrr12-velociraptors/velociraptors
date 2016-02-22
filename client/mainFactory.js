@@ -1,68 +1,67 @@
 
-myApp.factory('factoryFunction', function(){
-  var service = {};
-  service.sayHello = 'Hello';
-
-  return service
-});
-
-
-myApp.factory('signin', function(){
-  var service = {}
-  service.sayGoodbye = 'Bye'
-
-  return service
-});
-
-
-myApp.factory('createSession', function($http, $location) {
+myApp.factory('Session', function($http, $location) {
   var createSession = function(session) {
     return $http({
       method: 'POST',
-      url: '/api/sessions',
+      url: '/sessions',
       data: session
+    })
+    .then(function(session) {
+      return session;
     });
-  }
+  };
+  var getSessions = function() {
+    return $http({
+      method: 'GET',
+      url: '/sessions'
+    })
+    .then(function(sessions) {
+      return sessions;
+    });
+  };
+  return {
+    createSession: createSession,
+    getSessions: getSessions
+  };
 });
 
-////////////////// FROM SHORTLY ///////////////////////
-
-.factory('Auth', function ($http, $location, $window) {
+myApp.factory('Auth', function ($http, $location, $window) {
   var signin = function (user) {
     return $http({
       method: 'POST',
-      url: '/api/users/signin',
+      url: '/users/signIn',
       data: user
     })
-    .then(function (resp) {
-      return resp.data.token;
+    .then(function (user) {
+      return user;
     });
   };
 
   var signup = function (user) {
     return $http({
       method: 'POST',
-      url: '/api/users/signup',
+      url: '/users',
       data: user
     })
-    .then(function (resp) {
-      return resp.data.token;
+    .then(function (user) {
+      return user;
     });
   };
 
-  // var isAuth = function () {
-  //   return !!$window.localStorage.getItem('com.shortly');
-  // };
-
-  // var signout = function () {
-  //   $window.localStorage.removeItem('com.shortly');
-  //   $location.path('/signin');
-  // };
+  var signout = function (user) {
+    return $http({
+      method: 'POST',
+      url: '/users/signOut',
+      data: user
+    })
+    .then(function (user) {
+      return user;
+    });
+  };
 
   return {
     signin: signin,
     signup: signup,
-    isAuth: isAuth,
     signout: signout
   };
 });

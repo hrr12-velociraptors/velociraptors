@@ -1,23 +1,23 @@
 
-var app = angular.module("myApp", ['ngRoute']);
+var myApp = angular.module("myApp", ['ngRoute']);
 
 myApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'index.html',
-      controller: 'mainController'
+      templateUrl: 'main.html',
+      controller: 'SessionController'
     })
     .when('/users/signIn', {
       templateUrl: '/client/auth/signin.html',
-      controller: 'mainController'
+      controller: 'SigninController'
     })
     .when('/users', {
       templateUrl: '/client/auth/signup.html',
-      controller: 'mainController'
+      controller: 'SignupController'
     })
     .when('/sessions', {
       templateUrl: '/client/createSession/createSession.html',
-      controller: 'mainController'
+      controller: 'SessionController'
     })
     .otherwise({
       redirectTo: '/'

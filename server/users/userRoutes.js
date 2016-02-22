@@ -1,4 +1,5 @@
 var userController = require('./userController');
+var passport = require('passport');
 
 module.exports = function(app){
 
@@ -14,4 +15,4 @@ module.exports = function(app){
 	
 	// // '/signedIn'
 	// app.get('/signedIn', userController.checkAuth);
-}
+};

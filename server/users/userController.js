@@ -33,7 +33,7 @@ module.exports.signIn = function(req, res){
   res.json({ id: req.user.id, username: req.user.username, email: req.user.email });
 };
 
-modle.exports.signOut =function(req, res){
+module.exports.signOut =function(req, res){
   // add a neew user to database
     // log them in
   req.logout();

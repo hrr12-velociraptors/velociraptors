@@ -1,35 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LearnItNow</title>
+  <title>Learn it Now!</title>
   <link href='css/main.css' rel='stylesheet'>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
 </head>
 
 <body ng-app="myApp">
-<div class="container" ng-controller="mainController">
-  <head class="mainHead">
-    <h1 class="header">LearnItNow</h1>
-    <button class="signButton">Sign In</button>
-  </head>
-  <div class="sessions">
-  <ul class="session" ng-repeat="session in sessions">
-    <!-- <li>{{sessions}}</li> -->
-    <!-- <li ng-repeat="session in sessions"> -->
-    <li class="title">{{session.topic}}</li>
-    <li class="description">{{ session.description }}</li>
-    <li class="time">{{session.startTime}}</li>
-    <li class="Tutor"><span class="Tutor">Tutor: </span>{{session.username}}</li>
-    <li class="hangoutLink"><a href="{{session.link}}">Join Hangout</a></li>
-    <li class="register" ng-if="session.status===true">Session Full</li>
-    <li class="register" ng-if="session.status===false">Register</li>
-    
-  
-  </ul>
+  <div class="container">
+    <header class="mainHead">
+      <h1 class="header">Learn it Now!</h1>
+      <button class="signButton button">Sign in</button>
+    </header>
+    <div ng-view></div>
   </div>
-</div>
-<script src="app.js"></script>
-<script src="mainController.js"></script>
+
+  <script src="app.js"></script>
+  <script src="sessionController.js"></script>
+  <script src="signinController.js"></script>
+  <script src="signupController.js"></script>
+  <script src="mainFactory.js"></script>
 </body>
 </html>

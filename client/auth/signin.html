@@ -2,7 +2,7 @@
 <div ng-app="myApp">
 <div id='signin'>
   <h1>Sign In</h1>
-  <form name="signinForm" ng-controller="mainController" ng-submit='signin()'>
+  <form name="signinForm" ng-submit='signin(user)'>
     <label>Email </label>
     <input type='text' ng-model='user.email' required>
     <br>

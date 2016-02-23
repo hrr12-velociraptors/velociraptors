@@ -7,16 +7,16 @@ myApp.config(function($routeProvider) {
       templateUrl: 'main.html',
       controller: 'SessionController'
     })
-    .when('/users/signIn', {
-      templateUrl: '/client/auth/signin.html',
+    .when('/signin', {
+      templateUrl: 'auth/signin.html',
       controller: 'SigninController'
     })
-    .when('/users', {
-      templateUrl: '/client/auth/signup.html',
+    .when('/signup', {
+      templateUrl: 'auth/signup.html',
       controller: 'SignupController'
     })
-    .when('/sessions', {
-      templateUrl: '/client/createSession/createSession.html',
+    .when('/create', {
+      templateUrl: 'createSession/createSession.html',
       controller: 'SessionController'
     })
     .otherwise({

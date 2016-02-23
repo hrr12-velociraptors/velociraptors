@@ -1,0 +1,18 @@
+{
+  "name": "velociraptors",
+  "description": "Velociraptors Tutoring App",
+  "main": "server/server.js",
+  "authors": [
+    "Team Velociraptors"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rswerve/velociraptors",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

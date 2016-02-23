@@ -7,7 +7,8 @@ myApp.factory('Session', function($http, $location) {
       data: session
     })
     .then(function(session) {
-      return session;
+      console.log(session)
+      return session.data;
     });
   };
   var getSessions = function() {
@@ -16,7 +17,8 @@ myApp.factory('Session', function($http, $location) {
       url: '/sessions'
     })
     .then(function(sessions) {
-      return sessions;
+      console.log(sessions)
+      return sessions.data;
     });
   };
   return {
@@ -33,7 +35,8 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
-      return user;
+      console.log(user);
+      return user.data;
     });
   };
 
@@ -44,7 +47,8 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
-      return user;
+      console.log(user);
+      return user.data;
     });
   };
 
@@ -55,13 +59,24 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
-      return user;
+      return user.data;
+    });
+  };
+  
+  var isLoggedIn = function() {
+    return $http({
+      method: 'GET',
+      url: '/users/isLoggedIn'
+    })
+    .then(function(bool) {
+      return bool.data;
     });
   };
 
   return {
     signin: signin,
     signup: signup,
-    signout: signout
+    signout: signout,
+    isLoggedIn: isLoggedIn
   };
 });

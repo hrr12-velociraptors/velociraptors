@@ -44,13 +44,18 @@ myApp.controller('SessionController', function($scope, Session) {
     });
   };
   $scope.isLoggedIn = function() {
-    Auth.isLoggedIn().then(function(loggedIn){
-      if(!loggedIn) {
-        $window.location.href = '/#/signin';
-      } else {
-        $scope.$emit('loggedIn');
-      }
-    });
+    // Auth.isLoggedIn().then(function(loggedIn){
+    //   if(!loggedIn) {
+    //     $window.location.href = '/#/signin';
+    //   } else {
+    //     $scope.$emit('loggedIn');
+    //   }
+    // });
+    if (Auth.getLoggedIn()){
+      $scope.$emit('loggedIn');
+    } else {
+      $window.location.href = '/#/signin';
+    }
   };
   $scope.isLoggedIn();
 });

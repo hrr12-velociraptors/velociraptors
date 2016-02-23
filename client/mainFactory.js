@@ -77,6 +77,7 @@ myApp.factory('Auth', function ($http, $location, $window) {
       return user.data;
     });
   };
+  // deprecated
   
   var isLoggedIn = function() {
     return $http({
@@ -88,10 +89,26 @@ myApp.factory('Auth', function ($http, $location, $window) {
     });
   };
 
+  var loggedIn = false;
+  
+  isLoggedIn().then(function(bool){
+    loggedIn = bool;
+  });
+
+  var getLoggedIn = function(){
+    return loggedIn;
+  };
+
+  var setLoggedIn = function(bool){
+    loggedIn = bool;
+  };
+
   return {
     signin: signin,
     signup: signup,
     signout: signout,
-    isLoggedIn: isLoggedIn
+    isLoggedIn: isLoggedIn,
+    getLoggedIn: getLoggedIn,
+    setLoggedIn: setLoggedIn
   };
 });

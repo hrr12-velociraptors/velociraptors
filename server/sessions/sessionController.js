@@ -1,4 +1,6 @@
 var Session = require('../../db/models').Session;
+var Mailgun = require('mailgun-js');
+var config = require('../config/config');
 
 module.exports.addSession = function(req, res){
   Session.create(req.body).then(function(session) {
@@ -51,5 +53,24 @@ module.exports.checkAuth = function(req, res, next) {
   } else {
     res.send('Please sign in to create a session.');
   }
+};
 
+module.exports.registerSession = function(req, res) {
+  var mailgun = new Mailgun({ apiKey: config.mailGunAPIKey, domain: config.mailGunDomain });
+  
+  var data = {
+    from: 'learnitnow@learnitnow.herokuapp.com',
+    to: req.body.email,
+    subject: 'Session Registration',
+    html: 'Hello, thank you for registering for the session. This is your hangout link: ' + req.body.link + '.'
+  };
+  
+  mailgun.messages().send(data, function(err, body) {
+    console.log(data);
+    if (err) {
+      res.send('error', { error: err });
+    } else {
+      res.send('submitted', { email: req.body.email });
+    }
+  });
 };

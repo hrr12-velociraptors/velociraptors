@@ -7,5 +7,6 @@ module.exports = function(app) {
   app.post('/', sessionController.checkAuth, sessionController.addSession);
   app.put('/', sessionController.updateStatus);
   app.delete('/', sessionController.deleteSession);
+  app.post('/send', sessionController.registerSession);
 
 };

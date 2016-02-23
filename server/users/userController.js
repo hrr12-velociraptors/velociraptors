@@ -1,4 +1,4 @@
-var User = require('../../db/models').user;
+var User = require('../../db/models').User;
 
 module.exports.newUser = function(req, res){
 

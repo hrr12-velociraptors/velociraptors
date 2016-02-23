@@ -1,4 +1,4 @@
-var Session = require('../../db/models').session;
+var Session = require('../../db/models').Session;
 
 module.exports.addSession = function(req, res){
   Session.create(req.body).then(function(session) {

@@ -3,7 +3,7 @@ myApp.controller('SignupController', function($scope, Auth) {
   $scope.user = {};
   $scope.signup = function(user) {
     Auth.signup(user).then(function(data){
-    	console.log('sign up data ', data);
+    	console.log(data);
     });
   };
 });

@@ -3,22 +3,11 @@
 //         //
 
 var Sequelize = require('sequelize');
-var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
-var orm = new Sequelize(match[5], match[1], match[2], {
-    dialect:  'postgres',
-    protocol: 'postgres',
-    port:     match[4],
-    host:     match[3],
-    logging: false,
-    dialectOptions: {
-        ssl: true
-    }
-});
-//var orm = new Sequelize('learnItNowdb', 'root', '');
+var orm = new Sequelize('learnItNowdb', 'root', '');
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
-var user = orm.define('users', {
+var User = orm.define('User', {
   username: { 
     type: Sequelize.STRING, 
     unique: true 
@@ -39,11 +28,11 @@ var user = orm.define('users', {
   }
 });
 
-user.beforeCreate(function(user, options) {
+User.beforeCreate(function(user, options) {
   user.password = user.hashPassword();
 });
 
-var session = orm.define('sessions', {
+var Session = orm.define('Session', {
   topic: Sequelize.STRING,
   description: Sequelize.STRING,
   startTime: Sequelize.DATE,
@@ -51,14 +40,14 @@ var session = orm.define('sessions', {
   status: Sequelize.BOOLEAN
 });
 
-user.hasMany(session); 
-session.belongsTo(user);
+User.hasMany(Session); 
+Session.belongsTo(User);
 
-user.sync();
-session.sync();
+User.sync();
+Session.sync();
 
-exports.user = user;
-exports.session = session;
+exports.User = User;
+exports.Session = Session;
 
 
 

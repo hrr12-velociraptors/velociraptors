@@ -9,7 +9,8 @@ myApp.controller('SessionController', function($scope, Session) {
   };
   $scope.getSessions();
 })
-.controller('CreateSessionController', function($scope, Session, Auth) {
+
+.controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
   $scope.createSession = function(session) {
     Session.createSession(session).then(function(){

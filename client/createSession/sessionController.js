@@ -21,6 +21,7 @@ myApp.controller('SessionController', function($scope, Session) {
 
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
+  
   $scope.createSession = function(session) {
     Session.createSession(session).then(function(){
       $window.location.href = '/#/';
@@ -30,7 +31,9 @@ myApp.controller('SessionController', function($scope, Session) {
     Auth.isLoggedIn().then(function(loggedIn){
       if(!loggedIn) {
         $window.location.href = '/#/signin';
-      } 
+      } else {
+        $scope.$emit('loggedIn');
+      }
     });
   };
   $scope.isLoggedIn();

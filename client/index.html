@@ -15,16 +15,13 @@
   <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="IndexController">
   <div class="container">
     <header class="mainHead">
       <h1 class="header">Learn it Now!</h1>
-<<<<<<< HEAD
-      <button class="signButton button">Sign in</button>
-=======
-      <a href="#/signin" class="button">sign in</a>
+      <a href="#/signin" class="button" ng-show="auth.signin">sign in</a>
+      <a href="#/siginout" class="button" ng-show="auth.signout" ng-click="signout()">sign out</a>
       <a href="#/create" class="button">create session</a>
->>>>>>> f033e41b4ed0c6e4054c367cfed9845b56c15790
     </header>
     <div ng-view></div>
   </div>
@@ -33,6 +30,7 @@
   <script src="createSession/sessionController.js"></script>
   <script src="auth/signinController.js"></script>
   <script src="auth/signupController.js"></script>
+  <script src="indexController.js"></script>
   <script src="mainFactory.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ module.exports.isLoggedIn = function(req, res){
   var loggedIn = false;
   if (req.user && req.user.id){
     loggedIn = true;
-  }
+  } 
   res.send(loggedIn);
 };
 
@@ -45,6 +45,8 @@ module.exports.signOut =function(req, res){
   // add a neew user to database
     // log them in
   req.logout();
-  res.redirect('/signIn');
+  var result = module.exports.isLoggedIn(req, res);
+  res.send(result);
+  // res.redirect('/users');
 };
 

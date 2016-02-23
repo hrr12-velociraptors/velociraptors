@@ -8,14 +8,17 @@ myApp.controller('SessionController', function($scope, Session) {
     });
   };
   $scope.getSessions();
-  $scope.sessionFilter(session) {
-    var today = new Date();
-    var sessionTime = new Date(session.startTime.replace(/-/g,"/"));
-    if ( $scope.filterType === 'all') {
-      return true;
-    } else if ($scope.filterType === 'day') {
-      return sessionTime.getDay() === today.getDay() && sessionTime.getMonth() === today.getMonth() && sessionTime.getFullYear() === today.getFullYear();
-    } else if ($scope.filterType === 'week') {
+  $scope.filterType = 'all';
+  $scope.sessionFilter = function (session) {
+    if (session.startTime) {
+      var today = new Date();
+      var sessionTime = new Date(session.startTime.substring(0,19));
+      if ( $scope.filterType === 'all') {
+        return true;
+      } else if ($scope.filterType === 'day') {
+        return sessionTime.getDay() === today.getDay() && sessionTime.getMonth() === today.getMonth() && sessionTime.getFullYear() === today.getFullYear();
+      } 
+    } else {
       return true;
     }
   };
@@ -29,8 +32,13 @@ myApp.controller('SessionController', function($scope, Session) {
 })
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
-  
+
   $scope.createSession = function(session) {
+    var date = $scope.date.split('/');
+    var month = date[0];
+    var day = date[1];
+    var year = date[2];
+    session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
     Session.createSession(session).then(function(){
       $window.location.href = '/#/';
     });

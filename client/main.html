@@ -3,7 +3,7 @@
   <!-- TODO: sort sessions by start time -->
   <div>
     <label for="filter-box">Filter:</label><input type="search" id="filter-box" ng-model="filterBox" placeholder="Type to filter sessions..."></input>
-    <a href="" ng-click="filterType = 'all'">All</a><span> | </span><a href="" ng-click="filterType = 'day'">Today</a><span> | </span><a href="" ng-click="filterType = 'week'">This Week</a>
+    <a href="" ng-click="filterType = 'all'">All</a><span> | </span><a href="" ng-click="filterType = 'day'">Today</a>
   </div>
   <hr>
   <ul class="session" ng-repeat="session in sessions | filter:filterBox | filter:sessionFilter | orderBy:'startTime'">

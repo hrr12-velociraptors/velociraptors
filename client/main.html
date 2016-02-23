@@ -8,6 +8,6 @@
     <li class="tutor"><span class="tutorName">Tutor: </span>{{session.username}}</li>
     <li class="hangout button"><a href="{{session.link}}">Join Hangout</a></li>
     <li class="register button" ng-if="session.status===true">Session Full</li>
-    <li class="register button" ng-if="session.status===false">Register</li>
+    <li class="register button" ng-click="updateStatus($index)" ng-if="session.status===false  || session.status===null">Register</li>
   </ul>
 </div>

@@ -29,7 +29,7 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.isLoggedIn = function() {
     Auth.isLoggedIn().then(function(loggedIn){
       if(!loggedIn) {
-        $window.location.href = '/#/signIn';
+        $window.location.href = '/#/signin';
       } 
     });
   };

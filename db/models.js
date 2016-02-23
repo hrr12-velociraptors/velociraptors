@@ -3,7 +3,7 @@
 //         //
 
 var Sequelize = require('sequelize');
-var orm = new Sequelize('learnItNowdb', 'root', '');
+var orm = new Sequelize(process.env.JAWSDB_URL);
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 

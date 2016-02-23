@@ -5,7 +5,11 @@
   "main": "server.js",
   "engines": {
     "node": "0.12.7",
-    "npm":  "2.11.3"
+    "npm": "2.11.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "angular": "^1.5.0",
@@ -20,13 +24,10 @@
     "mysql": "^2.10.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "pg": "^4.4.6",
     "sequelize": "^3.19.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "start": "node server.js",
-    "postinstall": "bower install"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/velociraptors/velociraptors.git"

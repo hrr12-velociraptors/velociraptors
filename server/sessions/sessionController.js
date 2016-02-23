@@ -13,7 +13,7 @@ module.exports.addSession = function(req, res){
 module.exports.getSessions = function(req, res){
   Session.findAll(req.body).then(function(sessions) { // 
     if (sessions){
-      // console.log(sessions);
+      console.log(sessions);
       res.json(sessions);
     } else {
       console.log('No sessions found');

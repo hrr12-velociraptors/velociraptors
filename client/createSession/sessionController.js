@@ -1,10 +1,5 @@
 
 myApp.controller('SessionController', function($scope, Session) {
-  $scope.session = {};
-  $scope.createSession = function(session) {
-    Session.createSession(session);
-    $scope.getSessions();
-  };
   $scope.sessions = [];
   $scope.getSessions = function() {
     Session.getSessions()
@@ -13,4 +8,22 @@ myApp.controller('SessionController', function($scope, Session) {
     });
   };
   $scope.getSessions();
+})
+
+.controller('CreateSessionController', function($scope, Session, Auth, $window) {
+  $scope.session = {};
+  $scope.createSession = function(session) {
+    Session.createSession(session).then(function(){
+      $window.location.href = '/#/';
+    });
+  };
+  $scope.isLoggedIn = function() {
+    Auth.isLoggedIn().then(function(loggedIn){
+      if(!loggedIn) {
+        $window.location.href = '/#/users/signin';
+      } 
+    });
+  };
+  $scope.isLoggedIn();
 });
+

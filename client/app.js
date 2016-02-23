@@ -17,7 +17,7 @@ myApp.config(function($routeProvider) {
     })
     .when('/create', {
       templateUrl: 'createSession/createSession.html',
-      controller: 'SessionController'
+      controller: 'CreateSessionController'
     })
     .otherwise({
       redirectTo: '/'

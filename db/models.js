@@ -4,7 +4,6 @@
 
 var Sequelize = require('sequelize');
 var orm = new Sequelize('learnItNowdb', 'root', '');
-
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
@@ -49,7 +48,6 @@ Session.sync();
 
 exports.User = User;
 exports.Session = Session;
-
 
 
 

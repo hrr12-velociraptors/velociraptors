@@ -1,7 +1,12 @@
 
 <div class="sessions">
   <!-- TODO: sort sessions by start time -->
-  <ul class="session" ng-repeat="session in sessions">
+  <div>
+    <label for="filter-box">Filter:</label><input type="search" id="filter-box" ng-model="filter.$" placeholder="Type to filter sessions..."></input>
+    <a href="" ng-click="filter.date = undefined">All</a><span> | </span><a href="" ng-click="filter.date = ">Today</a><span> | </span><a href="" ng-click="">This Week</a>
+  </div>
+  <hr>
+  <ul class="session" ng-repeat="session in sessions | filter:filter | orderBy:'startTime'">
     <li class="topic">{{session.topic}}</li>
     <li class="description">{{session.description}}</li>
     <li class="time">{{session.startTime}}</li>

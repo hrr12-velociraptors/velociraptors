@@ -3,7 +3,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('./local.js');
-var User = require('../../db/models').User;
+var User = require('../../db/models').user;
 
 module.exports = function(app, express) {
 

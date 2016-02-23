@@ -33,14 +33,23 @@ module.exports.updateStatus = function(req, res){
     session.save().then(function(){
       res.send(session);
     }).catch(function(err){
-      console.log(err)
-    })
+      console.log(err);
+    });
   });
-}
+};
 module.exports.deleteSession = function(req, res){
-  Session.findOne({ userId: req.body.userId }).then(function(session){
+  Session.findById(req.id).then(function(session){
     return session.destroy();
   }).then(function(){
     console.log('Session was deleted.');
   });
+};
+
+module.exports.checkAuth = function(req, res, next) {
+  if(req.user && req.user.id) {
+    next();
+  } else {
+    res.send('Please sign in to create a session.');
+  }
+
 };

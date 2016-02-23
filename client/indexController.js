@@ -7,7 +7,7 @@ myApp.controller('IndexController', function($scope, $window, Auth) {
   
   $scope.signout = function(){
     Auth.signout();
-    // redirects to /sessions
+    Auth.setLoggedIn(false);
     $scope.auth.signin = true;
     $scope.auth.signout = false;
   };

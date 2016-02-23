@@ -18,7 +18,7 @@ var orm = new Sequelize(match[5], match[1], match[2], {
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
-var user = orm.define('user', {
+var user = orm.define('users', {
   username: { 
     type: Sequelize.STRING, 
     unique: true 
@@ -43,7 +43,7 @@ user.beforeCreate(function(user, options) {
   user.password = user.hashPassword();
 });
 
-var session = orm.define('session', {
+var session = orm.define('sessions', {
   topic: Sequelize.STRING,
   description: Sequelize.STRING,
   startTime: Sequelize.DATE,

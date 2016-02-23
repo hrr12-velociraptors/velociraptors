@@ -2,11 +2,11 @@
 <div class="sessions">
   <!-- TODO: sort sessions by start time -->
   <div>
-    <label for="filter-box">Filter:</label><input type="search" id="filter-box" ng-model="filter.$" placeholder="Type to filter sessions..."></input>
-    <a href="" ng-click="filter.date = undefined">All</a><span> | </span><a href="" ng-click="filter.date = ">Today</a><span> | </span><a href="" ng-click="">This Week</a>
+    <label for="filter-box">Filter:</label><input type="search" id="filter-box" ng-model="filterBox" placeholder="Type to filter sessions..."></input>
+    <a href="" ng-click="filterType = 'all'">All</a><span> | </span><a href="" ng-click="filterType = 'day'">Today</a><span> | </span><a href="" ng-click="filterType = 'week'">This Week</a>
   </div>
   <hr>
-  <ul class="session" ng-repeat="session in sessions | filter:filter | orderBy:'startTime'">
+  <ul class="session" ng-repeat="session in sessions | filter:filterBox | filter:sessionFilter | orderBy:'startTime'">
     <li class="topic">{{session.topic}}</li>
     <li class="description">{{session.description}}</li>
     <li class="time">{{session.startTime}}</li>

@@ -8,6 +8,28 @@ myApp.controller('SessionController', function($scope, Session) {
     });
   };
   $scope.getSessions();
+
+  $scope.isClicked = false;
+  $scope.startRegister = function(){
+    console.log(this);
+    angular.element(this).remove();
+  };
+
+  $scope.register = function(index, email, link){
+    var session = $scope.sessions[index];
+
+    // send an email to user and register them
+    var registerInfo = {email: email, link: link};
+    console.log('REGISTER INFO - >',registerInfo);
+    Session.register(registerInfo);
+
+    // updating status of session in the server
+    var updateInfo = {id: session.id, status: true };
+    Session.updateStatus(updateInfo).then(function(updatedSession){
+      $scope.getSessions();
+    });
+  };
+  
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {
@@ -22,14 +44,8 @@ myApp.controller('SessionController', function($scope, Session) {
       return true;
     }
   };
-  $scope.updateStatus = function(index){
-    var session = $scope.sessions[index];
-    var updateInfo = {id: session.id, status: true };
-    Session.updateStatus(updateInfo).then(function(updatedSession){
-      $scope.getSessions();
-    });
-  };
 })
+
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
 

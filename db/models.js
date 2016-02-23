@@ -18,7 +18,7 @@ var orm = new Sequelize(match[5], match[1], match[2], {
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
-var User = orm.define('User', {
+var user = orm.define('user', {
   username: { 
     type: Sequelize.STRING, 
     unique: true 
@@ -39,11 +39,11 @@ var User = orm.define('User', {
   }
 });
 
-User.beforeCreate(function(user, options) {
+user.beforeCreate(function(user, options) {
   user.password = user.hashPassword();
 });
 
-var Session = orm.define('Session', {
+var session = orm.define('session', {
   topic: Sequelize.STRING,
   description: Sequelize.STRING,
   startTime: Sequelize.DATE,
@@ -51,14 +51,14 @@ var Session = orm.define('Session', {
   status: Sequelize.BOOLEAN
 });
 
-User.hasMany(Session); 
-Session.belongsTo(User);
+user.hasMany(session); 
+session.belongsTo(user);
 
-User.sync();
-Session.sync();
+user.sync();
+session.sync();
 
-exports.User = User;
-exports.Session = Session;
+exports.user = user;
+exports.session = session;
 
 
 

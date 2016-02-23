@@ -21,9 +21,24 @@ myApp.factory('Session', function($http, $location) {
       return sessions.data;
     });
   };
+
+  // must send an object with 'id' and 'status' property 
+  var updateStatus = function(updateInfo){
+    console.log('clicked inside factory', updateInfo)
+    return $http({
+      method: 'PUT',
+      url: '/sessions',
+      data: updateInfo
+      })
+    .then(function(updatedSession){
+      console.log('Session Updated', updatedSession)
+      return updatedSession;
+    })
+  }
   return {
     createSession: createSession,
-    getSessions: getSessions
+    getSessions: getSessions,
+    updateStatus: updateStatus
   };
 });
 

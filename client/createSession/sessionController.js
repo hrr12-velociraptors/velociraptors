@@ -8,6 +8,15 @@ myApp.controller('SessionController', function($scope, Session) {
     });
   };
   $scope.getSessions();
+
+  $scope.updateStatus = function(index){
+    var session = $scope.sessions[index];
+    var updateInfo = {id: session.id, status: true };
+
+    Session.updateStatus(updateInfo).then(function(updatedSession){
+      $scope.getSessions();
+    })
+  }
 })
 
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {

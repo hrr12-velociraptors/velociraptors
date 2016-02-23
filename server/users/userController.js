@@ -46,7 +46,6 @@ module.exports.signOut =function(req, res){
     // log them in
   req.logout();
   var result = module.exports.isLoggedIn(req, res);
-  console.log(result);
   res.send(result);
   // res.redirect('/users');
 };

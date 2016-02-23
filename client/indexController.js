@@ -7,7 +7,7 @@ myApp.controller('IndexController', function($scope, $window, Auth) {
   
   $scope.signout = function(){
     Auth.signout();
-    $window.location.href = '/#/signin'; // not redirected to signin, redirects
+    $window.location.href = '/#/signin'; // not redirected to signin
     $scope.auth.signin = true;
     $scope.auth.signout = false;
   };

@@ -7,15 +7,15 @@ myApp.config(function($routeProvider) {
       templateUrl: 'main.html',
       controller: 'SessionController'
     })
-    .when('/users/signIn', {
+    .when('/signin', {
       templateUrl: 'auth/signin.html',
       controller: 'SigninController'
     })
-    .when('/users', {
+    .when('/signup', {
       templateUrl: 'auth/signup.html',
       controller: 'SignupController'
     })
-    .when('/sessions', {
+    .when('/create', {
       templateUrl: 'createSession/createSession.html',
       controller: 'SessionController'
     })

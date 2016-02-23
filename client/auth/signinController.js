@@ -6,7 +6,7 @@ myApp.controller('SigninController', function($scope, Auth, $window) {
       if(!user.email){
         console.log('Wrong username and password');
       } else{
-        $window.location.href = '/#/sessions';
+        $window.location.href = '/#/create';
       }
     });
   };

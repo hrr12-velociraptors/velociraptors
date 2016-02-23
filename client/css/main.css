@@ -5,6 +5,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -71,7 +72,8 @@ span.Tutor {
 }
 .container a {
   text-decoration: none;
-  color: #fff;
+  /*color: #fff;*/
+  color: black;
   font-weight: normal;
 }
 .register {

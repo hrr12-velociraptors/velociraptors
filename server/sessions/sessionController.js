@@ -1,10 +1,7 @@
 var Session = require('../../db/models').Session;
 var Mailgun = require('mailgun-js');
 var config = require('../config/config');
-<<<<<<< HEAD
-=======
 var http = require('http-request');
->>>>>>> 8301956a309bd355ad6b68efb66d50c95a77c586
 
 module.exports.addSession = function(req, res){
   //contact appear.in to get a random video chatroom link

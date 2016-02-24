@@ -3,22 +3,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><a href="/#/">Learn it Now!</a></title>
+  <title>Learn it Now!</title>
+  <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
+  
   <link href='css/main.css' rel='stylesheet'>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
-  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
 </head>
 
 <body ng-app="myApp" ng-controller="IndexController">
   <div class="container">
     <header class="mainHead">
-      <h1 class="header">Learn it Now!</h1>
+      <h1 class="header"><a href="/#/">Learn it Now!</a></h1>
       <a href="#/signin" class="button" ng-show="auth.signin">sign in</a>
       <a href="#/siginout" class="button" ng-show="auth.signout" ng-click="signout()">sign out</a>
       <a href="#/create" class="button">create session</a>
@@ -32,5 +32,12 @@
   <script src="auth/signupController.js"></script>
   <script src="indexController.js"></script>
   <script src="mainFactory.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript" ></script>
+  <script src="./bower_components/angular-aria/angular-aria.js" type="text/javascript" ></script>
+  <script src="./bower_components/angular-material/angular-material.js" type="text/javascript" ></script>
+
+
 </body>
 </html>

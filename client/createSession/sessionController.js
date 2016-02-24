@@ -29,7 +29,6 @@ myApp.controller('SessionController', function($scope, Session) {
       $scope.getSessions();
     });
   };
-  
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {

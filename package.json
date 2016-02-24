@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "angular": "^1.5.0",
+    "appearin-sdk": "0.0.4",
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.3.1",
     "body-parser": "^1.15.0",
@@ -16,6 +17,7 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "http-request": "^0.7.0",
     "mailgun-js": "^0.7.7",
     "middleware-js": "^2.0.0",
     "mysql": "^2.10.2",

@@ -42,7 +42,7 @@ myApp.factory('Session', function($http, $location) {
       url: '/sessions/send',
       data: userInfo
     }).then(function(email){
-      console.log('Email sent to ' + email);
+      console.log('Email sent to ', email);
     });
   };
 
@@ -55,6 +55,9 @@ myApp.factory('Session', function($http, $location) {
 });
 
 myApp.factory('Auth', function ($http, $location, $window) {
+
+  var signedInUser = null;
+
   var signin = function (user) {
     return $http({
       method: 'POST',
@@ -62,6 +65,7 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
+      signedInUser = user.data;
       console.log(user);
       return user.data;
     });
@@ -115,8 +119,12 @@ myApp.factory('Auth', function ($http, $location, $window) {
     loggedIn = bool;
   };
 
+  var getSignedInUser = function () {
+    return signedInUser;
+  };
 
   return {
+    getSignedInUser : getSignedInUser,
     signin: signin,
     signup: signup,
     signout: signout,

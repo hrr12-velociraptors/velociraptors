@@ -1,9 +1,11 @@
 var Session = require('../../db/models').Session;
+var User = require('../../db/models').User;
 var Mailgun = require('mailgun-js');
 var config = require('../config/config');
 var http = require('http-request');
 
 module.exports.addSession = function(req, res){
+
   //contact appear.in to get a random video chatroom link
   //set the link property on req.body before passing it into Session.create
   //now database will have a link for the session
@@ -23,7 +25,7 @@ module.exports.addSession = function(req, res){
 };
 
 module.exports.getSessions = function(req, res){
-  Session.findAll(req.body).then(function(sessions) { // 
+  Session.findAll({ where: req.body, include: [User]}).then(function(sessions) { // 
     if (sessions){
       res.json(sessions);
     } else {
@@ -68,19 +70,18 @@ module.exports.checkAuth = function(req, res, next) {
 module.exports.registerSession = function(req, res) {
   var mailgun = new Mailgun({ apiKey: config.mailGunAPIKey, domain: config.mailGunDomain });
   
-  var data = {
+  var dataTutee = {
     from: 'learnitnow@learnitnow.herokuapp.com',
-    to: req.body.email,
+    to: [req.body.tuteeEmail, req.body.tutorEmail],
     subject: 'Session Registration',
     html: 'Hello, thank you for registering for the session. This is your hangout link: ' + req.body.link + '.'
   };
   
-  mailgun.messages().send(data, function(err, body) {
-    console.log(data);
+  mailgun.messages().send(dataTutee, function(err, body) {
     if (err) {
       res.send('error', { error: err });
     } else {
-      res.send('submitted', { email: req.body.email });
+      res.send('submitted', { email: req.body.tuteeEmail });
     }
   });
 };

@@ -4,22 +4,22 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.getSessions = function() {
     Session.getSessions()
     .then(function(sessions) {
+      console.log(sessions);
       $scope.sessions = sessions;
     });
   };
   $scope.getSessions();
-
   $scope.isClicked = false;
   $scope.startRegister = function(){
     console.log(this);
     angular.element(this).remove();
   };
 
-  $scope.register = function(index, email, link){
+  $scope.register = function(index, tuteeEmail, link, tutorEmail){
     var session = $scope.sessions[index];
 
     // send an email to user and register them
-    var registerInfo = {email: email, link: link};
+    var registerInfo = {tuteeEmail: tuteeEmail, link: link, tutorEmail: tutorEmail};
     console.log('REGISTER INFO - >',registerInfo);
     Session.register(registerInfo);
 
@@ -50,6 +50,8 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.session = {};
 
   $scope.createSession = function(session) {
+    var user = Auth.getSignedInUser();
+    session.UserId = user.id;
     var date = $scope.date.split('/');
     var month = date[0];
     var day = date[1];

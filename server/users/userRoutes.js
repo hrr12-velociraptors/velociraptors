@@ -6,6 +6,7 @@ module.exports = function(app){
 	// '/users'
 	app.post('/', userController.newUser);
 	app.get('/', userController.getUsers);
+	app.get('/:id', userController.getOneUser);
 
 	// // '/signIn'
 	app.post('/signIn', passport.authenticate('local', { session: true }), userController.signIn);

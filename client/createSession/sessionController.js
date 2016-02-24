@@ -15,6 +15,7 @@ myApp.controller('SessionController', function($scope, Session) {
     angular.element(this).remove();
   };
 
+
   $scope.register = function(index, tuteeEmail, link, tutorEmail){
     var session = $scope.sessions[index];
 
@@ -29,6 +30,7 @@ myApp.controller('SessionController', function($scope, Session) {
       $scope.getSessions();
     });
   };
+
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {
@@ -47,27 +49,24 @@ myApp.controller('SessionController', function($scope, Session) {
 
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
+  $scope.myDate = new Date();
+  console.log($scope.myDate);
 
   $scope.createSession = function(session) {
-    var user = Auth.getSignedInUser();
-    session.UserId = user.id;
-    var date = $scope.date.split('/');
-    var month = date[0];
-    var day = date[1];
-    var year = date[2];
+    var date = $scope.myDate.toString().split(' ');
+    var months = {Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
+    var month = months[date[1]];
+    var day = date[2];
+    var year = date[3];
+
     session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
+    console.log('session ', session)
     Session.createSession(session).then(function(){
       $window.location.href = '/#/';
     });
   };
+
   $scope.isLoggedIn = function() {
-    // Auth.isLoggedIn().then(function(loggedIn){
-    //   if(!loggedIn) {
-    //     $window.location.href = '/#/signin';
-    //   } else {
-    //     $scope.$emit('loggedIn');
-    //   }
-    // });
     if (Auth.getLoggedIn()){
       $scope.$emit('loggedIn');
     } else {

@@ -4,7 +4,7 @@ module.exports.newUser = function(req, res){
 
   User.create({ username: req.body.username, password: req.body.password, email: req.body.email })
   .then(function(user) {
-    res.sendStatus(201);
+    res.send({username: user.username, email: user.email})
   })
   .catch(function(err) {
     console.error('Error creating user: ', err.message);
@@ -27,16 +27,40 @@ module.exports.getUsers = function(req, res){
   });
 };
 
+module.exports.updateUser = function(req, res){
+  var status = req.body.status;
+  var email = req.body.email;
+
+  Session.findOne({ email: email }).then(function(user){
+    user.status = status;
+    user.save().then(function(){
+      res.send({ email: user.email, status: user.status})
+    }).catch(function(err){
+      console.log(err)
+    })
+  });
+}
+
 module.exports.signIn = function(req, res){
  // log in and sset session
     // wrog user/pass data
   res.json({ id: req.user.id, username: req.user.username, email: req.user.email });
 };
 
-module.exports.signOut =function(req, res){
+// deprecated
+
+module.exports.isLoggedIn = function(req, res){
+  var loggedIn = false;
+  if (req.user && req.user.id){
+    loggedIn = true;
+  }
+  res.send(loggedIn);
+};
+
+module.exports.signOut = function(req, res){
   // add a neew user to database
     // log them in
   req.logout();
-  res.redirect('/signIn');
+  res.send('Logged out.');
 };
 

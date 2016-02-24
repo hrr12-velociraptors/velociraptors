@@ -5,6 +5,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -67,10 +68,12 @@ span.Tutor {
   border-radius: 5px;
   margin-top: 20px;
   margin-left: 10px;
+  cursor: pointer;
 }
 .container a {
   text-decoration: none;
-  color: #fff;
+  /*color: #fff;*/
+  color: black;
   font-weight: normal;
 }
 .register {
@@ -84,9 +87,15 @@ span.Tutor {
   margin-top: 20px;
 }
 
-/*style for signin*/
 
-
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 11px;
+    color: darkred;
+    margin: 10px 0 0 25px; }
 
 
 

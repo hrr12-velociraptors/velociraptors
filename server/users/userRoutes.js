@@ -12,6 +12,8 @@ module.exports = function(app){
 
 	// '/signOut'
 	app.post('/signOut', userController.signOut);
+
+	app.get('/isLoggedIn', userController.isLoggedIn);
 	
 	// // '/signedIn'
 	// app.get('/signedIn', userController.checkAuth);

@@ -1,5 +1,5 @@
 
-var myApp = angular.module("myApp", ['ngRoute']);
+var myApp = angular.module("myApp", ['ngRoute', 'ngMaterial']);
 
 myApp.config(function($routeProvider) {
   $routeProvider
@@ -17,7 +17,7 @@ myApp.config(function($routeProvider) {
     })
     .when('/create', {
       templateUrl: 'createSession/createSession.html',
-      controller: 'SessionController'
+      controller: 'CreateSessionController'
     })
     .otherwise({
       redirectTo: '/'

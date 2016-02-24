@@ -27,7 +27,7 @@ module.exports = function(app, express) {
   passport.deserializeUser(function(id, done) {
     User.findById(id)
     .then(function(user) {
-      return done(user);
+      return done(null, user);
     })
     .catch(function(err) {
       return done(err);

@@ -27,6 +27,17 @@ module.exports.getUsers = function(req, res){
   });
 };
 
+module.exports.getOneUser = function(req, res) {
+  User.findOne({ id: req.params.id })
+    .then(function (user) {
+      res.send(user);
+    })
+    .catch(function (err) {
+      console.error(err);
+      res.end();
+    });
+};
+
 module.exports.updateUser = function(req, res){
   var status = req.body.status;
   var email = req.body.email;

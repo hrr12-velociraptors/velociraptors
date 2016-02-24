@@ -1,14 +1,24 @@
 var Session = require('../../db/models').Session;
 var Mailgun = require('mailgun-js');
 var config = require('../config/config');
+var http = require('http-request');
 
 module.exports.addSession = function(req, res){
-  Session.create(req.body).then(function(session) {
-    // console.log(session);
-    res.send(session)
-  })
-  .catch(function(err) {
-    console.error('Error creating session: ', err);
+  //contact appear.in to get a random video chatroom link
+  //set the link property on req.body before passing it into Session.create
+  //now database will have a link for the session
+  http.post('https://api.appear.in/random-room-name', function (err, response) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    req.body.link = ("https://appear.in" + JSON.parse(response.buffer).roomName)
+    Session.create(req.body).then(function(session) {
+      res.send(session)
+    })
+    .catch(function(err) {
+      console.error('Error creating session: ', err);
+    });
   });
 };
 

@@ -7,7 +7,7 @@ myApp.factory('Session', function($http, $location) {
       data: session
     })
     .then(function(session) {
-      console.log(session);
+      console.log(session.data);
       return session.data;
     });
   };

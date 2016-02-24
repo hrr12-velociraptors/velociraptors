@@ -15,11 +15,11 @@ myApp.controller('SessionController', function($scope, Session) {
     angular.element(this).remove();
   };
 
-  $scope.register = function(index, email, link){
-    var session = $scope.sessions[index];
+  $scope.register = function(session, email){
+    // var session = $scope.sessions[index];
 
     // send an email to user and register them
-    var registerInfo = {email: email, link: link};
+    var registerInfo = {email: email, link: session.link};
     console.log('REGISTER INFO - >',registerInfo);
     Session.register(registerInfo);
 
@@ -29,7 +29,6 @@ myApp.controller('SessionController', function($scope, Session) {
       $scope.getSessions();
     });
   };
-  
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {

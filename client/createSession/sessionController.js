@@ -1,4 +1,4 @@
-
+//force
 myApp.controller('SessionController', function($scope, Session) {
   $scope.sessions = [];
   $scope.getSessions = function() {
@@ -45,12 +45,16 @@ myApp.controller('SessionController', function($scope, Session) {
       return true;
     }
   };
+  
+  $scope.displayTime = function(time) {
+    time = time.substring(0,16).split('T').join(' at ');
+    return time += ' PST';
+  };
 })
 
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
   $scope.myDate = new Date();
-  // console.log($scope.myDate);
 
   $scope.createSession = function(session) {
     var date = $scope.myDate.toString().split(' ');
@@ -58,6 +62,7 @@ myApp.controller('SessionController', function($scope, Session) {
     var month = months[date[1]];
     var day = date[2];
     var year = date[3];
+
     session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
     Auth.getSignedInUser().then(function(user){
       session.UserId = user.data.UserId;
@@ -67,6 +72,7 @@ myApp.controller('SessionController', function($scope, Session) {
       });
     });
   };
+  
 
   $scope.isLoggedIn = function() {
     if (Auth.getLoggedIn()){

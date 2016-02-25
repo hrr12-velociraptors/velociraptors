@@ -56,8 +56,6 @@ myApp.factory('Session', function($http, $location) {
 
 myApp.factory('Auth', function ($http, $location, $window) {
 
-  var signedInUser = null;
-
   var signin = function (user) {
     return $http({
       method: 'POST',
@@ -65,8 +63,6 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
-      signedInUser = user.data;
-      console.log(user);
       return user.data;
     });
   };
@@ -120,7 +116,15 @@ myApp.factory('Auth', function ($http, $location, $window) {
   };
 
   var getSignedInUser = function () {
-    return signedInUser;
+    // return $window.localStorage.getItem('user');
+    return $http({
+      method: 'GET',
+      url: '/users/getSignedInUser'
+    })
+    .then(function(user) {
+      console.log('Inside MainFactor.js, User: ', user)
+      return user;
+    });
   };
 
   return {

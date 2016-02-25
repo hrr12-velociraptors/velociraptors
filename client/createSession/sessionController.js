@@ -50,7 +50,7 @@ myApp.controller('SessionController', function($scope, Session) {
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
   $scope.myDate = new Date();
-  console.log($scope.myDate);
+  // console.log($scope.myDate);
 
   $scope.createSession = function(session) {
     var date = $scope.myDate.toString().split(' ');
@@ -58,11 +58,13 @@ myApp.controller('SessionController', function($scope, Session) {
     var month = months[date[1]];
     var day = date[2];
     var year = date[3];
-
     session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
-    console.log('session ', session)
-    Session.createSession(session).then(function(){
-      $window.location.href = '/#/';
+    Auth.getSignedInUser().then(function(user){
+      session.UserId = user.data.UserId;
+
+      Session.createSession(session).then(function(){
+        $window.location.href = '/#/';
+      });
     });
   };
 

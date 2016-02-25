@@ -17,8 +17,6 @@
   ],
   "dependencies": {
     "eonasdan-bootstrap-datetimepicker": "~4.17.37",
-    "bootstrap": "^3.3.6",
-    "angular-material": "~1.0.5"
     "bootstrap": "^3.3.6"
   },
   "resolutions": {

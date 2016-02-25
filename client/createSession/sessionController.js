@@ -45,12 +45,16 @@ myApp.controller('SessionController', function($scope, Session) {
       return true;
     }
   };
+  
+  $scope.displayTime = function(time) {
+    time = time.substring(0,16).split('T').join(' at ');
+    return time += ' PST';
+  };
 })
 
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
   $scope.myDate = new Date();
-  console.log($scope.myDate);
 
   $scope.createSession = function(session) {
     var date = $scope.myDate.toString().split(' ');
@@ -59,12 +63,15 @@ myApp.controller('SessionController', function($scope, Session) {
     var day = date[2];
     var year = date[3];
 
-    session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
-    console.log('session ', session)
-    Session.createSession(session).then(function(){
+    session.startTime = year + '-' + month + '-' + day + 'T' + $scope.time;
+    console.log('session startTime:', session.startTime);  // 2016-02-26 12:30:00
+    console.log('session before created:', session);
+    Session.createSession(session).then(function(session){
+      console.log('session after created:', session);
       $window.location.href = '/#/';
     });
   };
+  
 
   $scope.isLoggedIn = function() {
     if (Auth.getLoggedIn()){

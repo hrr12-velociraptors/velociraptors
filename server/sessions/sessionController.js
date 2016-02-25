@@ -66,9 +66,16 @@ module.exports.checkAuth = function(req, res, next) {
     res.send('Please sign in to create a session.');
   }
 };
+if (process.env.DEPLOYED === 'true'){
+  var APIKEY = process.env.MAILGUN_API_KEY
+  var DOMAIN = process.env.MAILGUN_DOMAIN
+} else {
+  var APIKEY = config.mailGunAPIKey
+  var DOMAIN = config.mailGunDomain
+}
 
 module.exports.registerSession = function(req, res) {
-  var mailgun = new Mailgun({ apiKey: config.mailGunAPIKey, domain: config.mailGunDomain });
+  var mailgun = new Mailgun({ apiKey: APIKEY, domain: DOMAIN });
   
   var dataTutee = {
     from: 'learnitnow@learnitnow.herokuapp.com',

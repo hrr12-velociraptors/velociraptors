@@ -1,4 +1,4 @@
-
+//force
 myApp.controller('SessionController', function($scope, Session) {
   $scope.sessions = [];
   $scope.getSessions = function() {

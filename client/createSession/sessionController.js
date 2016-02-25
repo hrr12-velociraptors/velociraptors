@@ -11,12 +11,12 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.getSessions();
   $scope.isClicked = false;
 
-  $scope.register = function(index, tuteeEmail, link, tutorEmail){
-    var session = $scope.sessions[index];
+  $scope.register = function(session, tuteeEmail){
+    // var session = $scope.sessions[index];
     console.log('Session being registered: ', session)
 
     // send an email to user and register them
-    var registerInfo = {tuteeEmail: tuteeEmail, link: link, tutorEmail: tutorEmail};
+    var registerInfo = {tuteeEmail: tuteeEmail, link: session.link, tutorEmail: session.User.email};
     // console.log('REGISTER INFO - >',registerInfo);
     Session.register(registerInfo);
 

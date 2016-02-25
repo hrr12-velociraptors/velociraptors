@@ -1,27 +1,23 @@
-//force
+
 myApp.controller('SessionController', function($scope, Session) {
   $scope.sessions = [];
   $scope.getSessions = function() {
     Session.getSessions()
     .then(function(sessions) {
-      console.log(sessions);
+      console.log('All Sessions: ', sessions);
       $scope.sessions = sessions;
     });
   };
   $scope.getSessions();
   $scope.isClicked = false;
-  $scope.startRegister = function(){
-    console.log(this);
-    angular.element(this).remove();
-  };
-
 
   $scope.register = function(index, tuteeEmail, link, tutorEmail){
     var session = $scope.sessions[index];
+    console.log('Session being registered: ', session)
 
     // send an email to user and register them
     var registerInfo = {tuteeEmail: tuteeEmail, link: link, tutorEmail: tutorEmail};
-    console.log('REGISTER INFO - >',registerInfo);
+    // console.log('REGISTER INFO - >',registerInfo);
     Session.register(registerInfo);
 
     // updating status of session in the server

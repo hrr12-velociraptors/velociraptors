@@ -75,3 +75,8 @@ module.exports.signOut = function(req, res){
   res.send('Logged out.');
 };
 
+module.exports.getSignedInUser = function(req, res){
+  // console.log(req.user);
+  res.send({ UserId: req.user.id });
+
+};

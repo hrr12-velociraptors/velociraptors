@@ -63,12 +63,13 @@ myApp.controller('SessionController', function($scope, Session) {
     var day = date[2];
     var year = date[3];
 
-    session.startTime = year + '-' + month + '-' + day + 'T' + $scope.time;
-    console.log('session startTime:', session.startTime);  // 2016-02-26 12:30:00
-    console.log('session before created:', session);
-    Session.createSession(session).then(function(session){
-      console.log('session after created:', session);
-      $window.location.href = '/#/';
+    session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
+    Auth.getSignedInUser().then(function(user){
+      session.UserId = user.data.UserId;
+
+      Session.createSession(session).then(function(){
+        $window.location.href = '/#/';
+      });
     });
   };
   

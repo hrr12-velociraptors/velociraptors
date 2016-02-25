@@ -14,9 +14,9 @@ module.exports.addSession = function(req, res){
       console.error(err);
       return;
     }
-    req.body.link = ("https://appear.in" + JSON.parse(response.buffer).roomName)
+    req.body.link = ("https://appear.in" + JSON.parse(response.buffer).roomName);
     Session.create(req.body).then(function(session) {
-      res.send(session)
+      res.send(session);
     })
     .catch(function(err) {
       console.error('Error creating session: ', err);

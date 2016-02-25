@@ -41,7 +41,8 @@ var Session = orm.define('Session', {
   description: Sequelize.STRING,
   startTime: Sequelize.DATE,
   link: Sequelize.TEXT,
-  status: Sequelize.BOOLEAN
+  status: Sequelize.BOOLEAN,
+  category: Sequelize.STRING
 });
 
 User.hasMany(Session); 

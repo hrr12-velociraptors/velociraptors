@@ -25,6 +25,6 @@
     <!-- <li class="hangout button"><a href="{{session.link}}">Join Hangout</a></li> -->
     <li class="register button" ng-if="session.status===true">Session Full</li>
     <!-- <li class="register button" ng-click="startRegister(this)" ng-if="session.status===false  || session.status===null">Register</li> -->
-    <li ng-if="session.status===false  || session.status===null"><input ng-model="email" type="text" placeholder="enter email"/><button ng-click="register(session, email)">Register</button></li>
+    <li ng-if="session.status===false  || session.status===null"><input ng-model="email" type="text" placeholder="enter email"/><button ng-click="register($index, email, session.link, session.User.email)">Register</button></li>
   </ul>
 </div>

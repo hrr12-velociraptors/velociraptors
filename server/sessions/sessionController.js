@@ -8,7 +8,7 @@ module.exports.addSession = function(req, res){
 
   //contact appear.in to get a random video chatroom link
   //set the link property on req.body before passing it into Session.create
-  //now database will have a link for the session
+  //session record in db will include a link to video chat
   http.post('https://api.appear.in/random-room-name', function (err, response) {
     if (err) {
       console.error(err);

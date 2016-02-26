@@ -36,7 +36,7 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```
-git remote add upstream https://github.com/hrr12-velociraptors/velociraptors.git
+git remote add upstream https://github.com/remotebeta-labs/<NAME_OF_REPO>.git
 ```
 
 ### Cut a namespaced feature branch from master

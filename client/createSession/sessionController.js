@@ -1,5 +1,6 @@
 
 myApp.controller('SessionController', function ($scope, Session) {
+  $
   $scope.sessions = [];
   $scope.getSessions = function () {
     Session.getSessions()
@@ -14,7 +15,7 @@ myApp.controller('SessionController', function ($scope, Session) {
   $scope.register = function (session, tuteeEmail){
 
     // send an email to user and register them
-    var registerInfo = {tuteeEmail: tuteeEmail, link: session.link, tutorEmail: session.User.email};
+    var registerInfo = {tuteeEmail: tuteeEmail, link: session.link, topic: session.topic, tutorEmail: session.User.email};
 
     Session.register(registerInfo);
 

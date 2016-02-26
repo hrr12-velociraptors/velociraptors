@@ -335,12 +335,12 @@ textarea {
 
 @media (max-width: 1200px) {
   .session {
-    width: 43%;
+    width: 45%;
     max-width: 600px;
     height: 560px;
+    margin: 20px 17px;
   }
 }
-
 @media (max-width: 950px) {
   .intro {
     max-width: 800px;
@@ -358,6 +358,4 @@ textarea {
   }
 }
 
-/*@media (max-width: 760px) {
-  
-}*/
+/* @media (max-width: 760px) { } */

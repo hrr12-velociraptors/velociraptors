@@ -215,3 +215,25 @@ textarea {
   color: #8f0714;
   margin: 10px 0 0 25px; 
 }
+
+/***** responsive styles *****/
+
+@media (max-width: 950px) {
+  .intro {
+    max-width: 800px;
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 800px) {
+  .intro {
+    max-width: 750px;
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 750px) {
+  .intro {
+    max-width: 750px;
+    font-size: 1.2em;
+  }
+}
+

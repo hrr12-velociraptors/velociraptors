@@ -20,13 +20,13 @@ body {
   border-top: 10px solid #a4482c;
   border-bottom: 10px solid #993e22;
   margin: 0;
-  background-image: url("../images/background.gif");
+  background-image: url("../images/background-2.gif");
   height: 350px;
 }
 .intro {
-  max-width: 850px;
+  max-width: 900px;
   margin: 55px auto;
-  font-size: 1.35em;
+  font-size: 1.45em;
   font-weight: 500;
   color: #ffefea;
   line-height: 2;
@@ -55,7 +55,7 @@ a {
   margin-top: 67px;
 }
 .bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 .sessions {
   max-width: 1200px;
@@ -64,10 +64,10 @@ a {
 .featured {
   height: 70px;
   width: 850px;
-  margin: 30px auto;
+  margin: 30px auto 10px;
 }
 .filters {
-  max-width: 716px;
+  max-width: 710px;
   height: 50px;
   margin: 0 auto;
   padding: 15px;
@@ -91,7 +91,7 @@ a {
 }
 .date-box {
   height: 33px;
-  width: 200px;
+  width: 194px;
   border-radius: 5px;
   background-color: #fff;
   border: 2px solid #a4482c;
@@ -134,7 +134,7 @@ old styles
 }
 .topic {
   font-size: 1.3em;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 .description {
@@ -155,30 +155,25 @@ old styles
   margin-top: 20px;
   cursor: pointer;
 }
-.register {
-  font-weight: normal;
-  float: right;
-  background-color: #666;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
 .registration {
   position: absolute;
   bottom: 25px;
   left: 25px;
+  font-family: Hind, sans-serif;
 }
 .registration input {
   font-size: 1em;
   border-radius: 5px;
-  padding: 8px;
+  padding: 4px 8px;
   width: 130px;
   margin-right: 5px;
+  font-family: Hind, sans-serif;
 }
 .registration button {
   font-size: 1em;
   border-radius: 5px;
-  padding: 8px;
+  padding: 4px 8px;
+  font-family: Hind, sans-serif;
 }
 
 /*

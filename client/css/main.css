@@ -13,27 +13,11 @@ body {
 }
 .image-container {
   background-color: #a4482c;
-  width: 100%;
   text-align: center;
   border-top: 7px solid #a4482c;
   border-bottom: 7px solid #993e22;
-  margin: 0;
   background-image: url("../images/background.gif");
   height: 350px;
-}
-.page-title {
-  background-color: #a4482c;
-  width: 100%;
-  text-align: center;
-  border-top: 7px solid #993e22;
-  border-bottom: 7px solid #993e22;
-  margin: 0;
-  height: 80px;
-}
-.small-container {
-  max-width: 840px;
-  margin: 50px auto;
-  font-size: 1.3em;
 }
 .intro {
   max-width: 900px;
@@ -64,15 +48,9 @@ body {
   margin-left: 130px;
   font-family: Play, sans-serif;
 }
-.subhead {
-  font-size: 1.6em;
-  font-weight: 500;
-  color: #507484;
-  margin-bottom: 30px;
-}
-.sessionCategory {
-  margin-bottom: 40px;
-}
+
+
+
 a {
   text-decoration: none;
   color: #1b4f65;
@@ -137,10 +115,6 @@ a:hover {
 }
 
 
-
-/*
-old styles
-*/
 .session {
   overflow: hidden;
   list-style: none;
@@ -171,18 +145,6 @@ old styles
 }
 .description {
   margin-bottom: 20px;
-}
-.time {
-
-}
-.small-container input {
-  color: #666;
-  padding: 10px;
-}
-textarea {
-  color: #666;
-  margin-bottom: 5px;
-  padding: 10px;
 }
 
 .tutor {
@@ -235,16 +197,42 @@ textarea {
   font-size: 1.05em;
 }
 
+/***** form page styles *****/
 
-/*
-datepicker styles
-*/ 
-.datepickerdemoBasicUsage {
-  /** Demo styles for mdCalendar. */ }
-  .datepickerdemoBasicUsage md-content {
-    padding-bottom: 200px; }
-  .datepickerdemoBasicUsage .validation-messages {
-    font-size: 11px;
-    color: #8f0714;
-    margin: 10px 0 0 25px; }
-
+.headerBar {
+  background-color: #a4482c;
+  border-top: 7px solid #993e22;
+  border-bottom: 7px solid #993e22;
+  height: 80px;
+}
+.formContainer {
+  max-width: 840px;
+  margin: 50px auto;
+  font-size: 1.3em;
+}
+.subhead {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #507484;
+  margin-bottom: 30px;
+}
+.formContainer input {
+  color: #666;
+  padding: 10px;
+}
+textarea {
+  color: #666;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.sessionCategory {
+  margin-bottom: 40px;
+}
+.datepickerdemoBasicUsage md-content {
+  padding-bottom: 200px; 
+}
+.datepickerdemoBasicUsage .validation-messages {
+  font-size: 11px;
+  color: #8f0714;
+  margin: 10px 0 0 25px; 
+}

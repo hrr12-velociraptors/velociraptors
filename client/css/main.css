@@ -70,6 +70,9 @@ a:hover {
   color: #ffefea;
   line-height: 2;
 }
+#introSmall {
+  display: none;
+}
 
 /***** filters styles *****/
 
@@ -105,7 +108,7 @@ a:hover {
 .featured {
   display: block;
   margin: 30px auto 10px;
-  width: 90%;
+  width: 95%;
   max-width: 985px;
 }
 
@@ -230,12 +233,25 @@ textarea {
   .intro {
     max-width: 750px;
     font-size: 1.2em;
+    margin: 30px auto;
+  }
+  .imageContainer {
+    height: 280px;
   }
 }
-@media (max-width: 750px) {
-  .intro {
-    max-width: 750px;
-    font-size: 1.2em;
+@media (max-width: 760px) {
+  #introBig {
+    display: none;
+  }
+  #introSmall {
+    display: block;
+    margin: 20px;
+  }
+  .featured {
+    display: none;
+  }
+  .head {
+    font-size: 2em;
   }
 }
 

@@ -1,4 +1,54 @@
 
+/* 
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /***** general styles *****/
 
 html {
@@ -110,6 +160,63 @@ a:hover {
   margin: 30px auto 10px;
   width: 95%;
   max-width: 985px;
+}
+
+/* select menu styles */
+/* http://www.lugolabs.com/articles/72-style-select-html-element-with-css */
+
+.select {
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+.select select {
+  outline: none;
+  -webkit-appearance: none;
+  display: block;
+  padding: .75em 2.9em .6em 1em;
+  margin: 0;
+  transition: border-color 0.2s;
+  border: 2px solid #a4482c;
+  border-radius: 5px;
+  background: #fff;
+  color: #555;
+  line-height: normal;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: inherit;
+}
+.select .arrow {
+  background: #fff;
+  bottom: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  pointer-events: none;
+}
+.select .arrow:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 10px solid #a4482c;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.select .arrow:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 6px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
 }
 
 /***** session styles *****/
@@ -245,13 +352,48 @@ textarea {
   }
   #introSmall {
     display: block;
-    margin: 20px;
+    margin: 30px;
   }
   .featured {
     display: none;
   }
   .head {
     font-size: 2em;
+  }
+  .filtersContainer {
+    max-width: 710px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, .2);
+    border: 1px solid #a4482c;
+  }
+  .filterBox {
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid #a4482c;
+    display: block;
+    float: left;
+    margin-left: 10px;
+  }
+  .keywordFilter {
+    height: 42px;
+    width: 258px;
+    padding: 3px 0 0 14px;
+    font-size: 1.15em;
+  }
+  .dateFilter {
+    height: 33px;
+    width: 194px;
+    padding: 12px 15px 1px;
+    font-size: 1.2em;
+  }
+  .featured {
+    display: block;
+    margin: 30px auto 10px;
+    width: 95%;
+    max-width: 985px;
   }
 }
 

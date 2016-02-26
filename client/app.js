@@ -1,7 +1,7 @@
-
+//ngMaterial included for datepicker
 var myApp = angular.module("myApp", ['ngRoute', 'ngMaterial']);
 
-myApp.config(function($routeProvider) {
+myApp.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'main.html',

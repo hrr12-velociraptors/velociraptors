@@ -18,14 +18,14 @@ myApp.controller('SessionController', function ($scope, Session) {
 
     Session.register(registerInfo);
 
-    // updating status of session in the server
+    // when someone registers for a session, status of session changes to true
     var updateInfo = {id: session.id, status: true };
     Session.updateStatus(updateInfo).then(function(updatedSession){
       $scope.getSessions();
     });
   };
-  
-  // filters through list of sessions by startTime
+
+  //logic for filtering sessions by all vs. today
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {
@@ -40,7 +40,7 @@ myApp.controller('SessionController', function ($scope, Session) {
       return true;
     }
   };
-  
+  //format time for display on session card
   $scope.displayTime = function(time) {
     time = time.substring(0,16).split('T').join(' at ');
     return time += ' PST';
@@ -69,6 +69,7 @@ myApp.controller('SessionController', function ($scope, Session) {
       session.UserId = user.data.UserId;
 
       Session.createSession(session).then(function(){
+        // redirect
         $window.location.href = '/#/';
       });
     });
@@ -79,6 +80,7 @@ myApp.controller('SessionController', function ($scope, Session) {
     if (Auth.getLoggedIn()){
       $scope.$emit('loggedIn');
     } else {
+      // redirect
       $window.location.href = '/#/signin';
     }
   };

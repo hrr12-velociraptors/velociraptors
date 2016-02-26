@@ -7,7 +7,6 @@ myApp.factory('Session', function($http, $location) {
       data: session
     })
     .then(function(session) {
-      console.log(session.data);
       return session.data;
     });
   };
@@ -17,7 +16,6 @@ myApp.factory('Session', function($http, $location) {
       url: '/sessions'
     })
     .then(function(sessions) {
-      console.log(sessions);
       return sessions.data;
     });
   };
@@ -31,7 +29,6 @@ myApp.factory('Session', function($http, $location) {
       data: updateInfo
       })
     .then(function(updatedSession){
-      console.log('Session Updated', updatedSession);
       return updatedSession;
     });
   };
@@ -41,8 +38,6 @@ myApp.factory('Session', function($http, $location) {
       method: 'POST',
       url: '/sessions/send',
       data: userInfo
-    }).then(function(email){
-      console.log('Email sent to ', email);
     });
   };
 
@@ -74,7 +69,6 @@ myApp.factory('Auth', function ($http, $location, $window) {
       data: user
     })
     .then(function (user) {
-      console.log(user);
       return user.data;
     });
   };
@@ -89,7 +83,7 @@ myApp.factory('Auth', function ($http, $location, $window) {
       return user.data;
     });
   };
-  // deprecated
+  
   
   var isLoggedIn = function() {
     return $http({
@@ -122,7 +116,6 @@ myApp.factory('Auth', function ($http, $location, $window) {
       url: '/users/getSignedInUser'
     })
     .then(function(user) {
-      console.log('Inside MainFactor.js, User: ', user)
       return user;
     });
   };

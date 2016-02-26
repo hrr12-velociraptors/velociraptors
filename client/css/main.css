@@ -103,8 +103,10 @@ a:hover {
   font-size: 1.2em;
 }
 .featured {
-  width: 985px;
+  display: block;
   margin: 30px auto 10px;
+  width: 90%;
+  max-width: 985px;
 }
 
 /***** session styles *****/

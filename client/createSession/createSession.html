@@ -1,5 +1,6 @@
-<div class="page-title"></div>
-<div class="small-container" id='createSession'>
+
+<div class="headerBar"></div>
+<div class="formContainer" id='createSession'>
   <h1 class="subhead">Create Session</h1>
   <form name="createSessionForm" ng-submit='createSession(session)'>
     <label>Topic</label><br>
@@ -7,7 +8,7 @@
     <br>
     <br>
     <label>Description</label><br>
-    <textarea cols="40" style="width:400px; height:150px;" maxLength="255" ng-model='session.description' required></textarea>
+    <textarea cols="40" style="width:400px; height:150px;" maxLength="195" ng-model='session.description' required></textarea>
     <br>
     <br>
     <label>Category &nbsp;&nbsp;</label>

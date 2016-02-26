@@ -1,3 +1,56 @@
+
+/* 
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/***** general styles *****/
+
 html {
   padding: 0;
   margin: 20px 0;
@@ -11,39 +64,20 @@ body {
   width: 100%;
   margin: 0;
 }
-.image-container {
-  background-color: #a4482c;
-  width: 100%;
-  text-align: center;
-  border-top: 7px solid #a4482c;
-  border-bottom: 7px solid #993e22;
-  margin: 0;
-  background-image: url("../images/background.gif");
-  height: 350px;
+a {
+  text-decoration: none;
+  color: #1b4f65;
 }
-.page-title {
-  background-color: #a4482c;
-  width: 100%;
-  text-align: center;
-  border-top: 7px solid #993e22;
-  border-bottom: 7px solid #993e22;
-  margin: 0;
-  height: 80px;
+a:hover {
+  color: #618695;
 }
-.small-container {
-  max-width: 840px;
-  margin: 50px auto;
-  font-size: 1.3em;
+.bold {
+  font-weight: 600;
 }
-.intro {
-  max-width: 900px;
-  margin: 55px auto;
-  font-size: 1.45em;
-  font-weight: 500;
-  color: #ffefea;
-  line-height: 2;
-}
-.mainHead {
+
+/***** header styles *****/
+
+.mainHeader {
   height: 100px;
   margin: 0 auto;
   color: #1b4f65;
@@ -55,30 +89,14 @@ body {
   top: 25px;
   left: 20px;
 }
-.header {
+.head {
   float: left;
-  font-size: 3.3em;
-  letter-spacing: -.03em;
-  font-weight: 700;
   margin-top: 35px;
   margin-left: 130px;
   font-family: Play, sans-serif;
-}
-.subhead {
-  font-size: 1.6em;
-  font-weight: 500;
-  color: #507484;
-  margin-bottom: 30px;
-}
-.sessionCategory {
-  margin-bottom: 40px;
-}
-a {
-  text-decoration: none;
-  color: #1b4f65;
-}
-a:hover {
-  color: #618695;
+  font-size: 3.3em;
+  font-weight: 700;
+  letter-spacing: -.03em;
 }
 .nav {
   float: right;
@@ -86,19 +104,29 @@ a:hover {
   font-size: 1.3em;
   margin-top: 69px;
 }
-.bold {
-  font-weight: 600;
+.imageContainer {
+  background-color: #a4482c;
+  text-align: center;
+  border-top: 7px solid #a4482c;
+  border-bottom: 7px solid #993e22;
+  background-image: url("../images/background.gif");
+  height: 350px;
 }
-.sessions {
-  max-width: 1200px;
-  margin: 0 auto;
+.intro {
+  max-width: 900px;
+  margin: 55px auto;
+  font-size: 1.45em;
+  font-weight: 500;
+  color: #ffefea;
+  line-height: 2;
 }
-.featured {
-  height: 70px;
-  width: 985px;
-  margin: 30px auto 10px;
+#introSmall {
+  display: none;
 }
-.filters {
+
+/***** filters styles *****/
+
+.filtersContainer {
   max-width: 710px;
   height: 50px;
   margin: 0 auto;
@@ -107,62 +135,118 @@ a:hover {
   background-color: rgba(255, 255, 255, .2);
   border: 1px solid #a4482c;
 }
-.filter-box {
+.filterBox {
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #a4482c;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+.keywordFilter {
   height: 42px;
   width: 258px;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 2px solid #a4482c;
-  display: inline-block;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  padding-left: 14px;
-  padding-bottom: 3px;
+  padding: 3px 0 0 14px;
   font-size: 1.15em;
 }
-.date-box {
+.dateFilter {
   height: 33px;
   width: 194px;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 2px solid #a4482c;
-  display: inline-block;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  margin-bottom: 0;
   padding: 12px 15px 1px;
   font-size: 1.2em;
 }
+.featured {
+  display: block;
+  margin: 30px auto 10px;
+  width: 95%;
+  max-width: 985px;
+}
 
+/* select menu styles */
+/* http://www.lugolabs.com/articles/72-style-select-html-element-with-css */
 
+.select {
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+.select select {
+  outline: none;
+  -webkit-appearance: none;
+  display: block;
+  padding: .75em 2.9em .6em 1em;
+  margin: 0;
+  transition: border-color 0.2s;
+  border: 2px solid #a4482c;
+  border-radius: 5px;
+  background: #fff;
+  color: #555;
+  line-height: normal;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: inherit;
+}
+.select .arrow {
+  background: #fff;
+  bottom: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  pointer-events: none;
+}
+.select .arrow:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 10px solid #a4482c;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.select .arrow:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 6px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
 
-/*
-old styles
-*/
+/***** session styles *****/
+
+.sessionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .session {
+  font-family: Hind, sans-serif;
   overflow: hidden;
   list-style: none;
   background-color: #efefef;
-  padding: 25px;
   margin: 20px 23px;
   display: inline-block;
   border-radius: 10px;
-  width: 300px;
-  height: 500px;
+  max-width: 350px;
+  width: 30%;
+  height: 530px;
   position: relative;
   border: 1px solid #ccc;
 }
-.sessionInfo {
-  list-style: none;
-  padding: 15px;
-}
 .photo {
+  width: 100%;
   border-radius: 10px 10px 0 0;
-  margin-left: -25px;
-  margin-top: -25px;
   margin-bottom: 20px;
+}
+.sessionDetails {
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .topic {
   font-size: 1.3em;
@@ -172,10 +256,61 @@ old styles
 .description {
   margin-bottom: 20px;
 }
-.time {
-
+.tutor {
+  margin-bottom: 20px;
 }
-.small-container input {
+.registration input {
+  width: 120px;
+  font-family: Hind, sans-serif;
+  font-size: 1.05em;
+  border-radius: 5px;
+  padding: 5px 8px;
+  margin-right: 5px;
+}
+.session-full {
+  position: absolute;
+  bottom: 21px;
+  right: 23px;
+  padding: 7px 12px;
+}
+.button {
+  font-family: Hind, sans-serif;
+  font-size: 1.05em;
+  font-weight: 600;
+  background-color: #1d5268;
+  color: #fff;
+  border-radius: 5px;
+}
+.registration {
+  position: absolute;
+  bottom: 21px;
+  right: 23px;
+}
+.registration button {
+  padding: 6px 12px;
+  border: 0;
+}
+
+/***** form styles *****/
+
+.headerBar {
+  background-color: #a4482c;
+  border-top: 7px solid #993e22;
+  border-bottom: 7px solid #993e22;
+  height: 80px;
+}
+.formContainer {
+  max-width: 840px;
+  margin: 50px auto;
+  font-size: 1.3em;
+}
+.subhead {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #507484;
+  margin-bottom: 30px;
+}
+.formContainer input {
   color: #666;
   padding: 10px;
 }
@@ -184,67 +319,43 @@ textarea {
   margin-bottom: 5px;
   padding: 10px;
 }
-
-.tutor {
-  margin-bottom: 20px;
+.sessionCategory {
+  margin-bottom: 40px;
 }
-.button {
-  float: right;
-  background-color: #666;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  margin-top: 20px;
-  cursor: pointer;
+.datepickerdemoBasicUsage md-content {
+  padding-bottom: 200px; 
 }
-.session-full {
-  position: absolute;
-  bottom: 21px;
-  right: 23px;
-  font-family: Hind, sans-serif;
-  padding: 7px 12px;
-  background-color: #1d5268;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 5px;
-  font-size: 1.05em;
-}
-.registration {
-  position: absolute;
-  bottom: 21px;
-  right: 23px;
-  font-family: Hind, sans-serif;
-}
-.registration input {
-  font-size: 1.05em;
-  border-radius: 5px;
-  padding: 5px 8px;
-  width: 120px;
-  margin-right: 5px;
-  font-family: Hind, sans-serif;
-}
-.registration button {
-  font-size: 1em;
-  border-radius: 5px;
-  padding: 6px 12px;
-  font-weight: 600;
-  font-family: Hind, sans-serif;
-  background-color: #1d5268;
-  color: #fff;
-  border: 0;
-  font-size: 1.05em;
+.datepickerdemoBasicUsage .validation-messages {
+  font-size: 11px;
+  color: #8f0714;
+  margin: 10px 0 0 25px; 
 }
 
+/***** responsive styles *****/
 
-/*
-datepicker styles
-*/ 
-.datepickerdemoBasicUsage {
-  /** Demo styles for mdCalendar. */ }
-  .datepickerdemoBasicUsage md-content {
-    padding-bottom: 200px; }
-  .datepickerdemoBasicUsage .validation-messages {
-    font-size: 11px;
-    color: #8f0714;
-    margin: 10px 0 0 25px; }
+@media (max-width: 1200px) {
+  .session {
+    width: 45%;
+    max-width: 600px;
+    height: 560px;
+    margin: 20px 17px;
+  }
+}
+@media (max-width: 950px) {
+  .intro {
+    max-width: 800px;
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 800px) {
+  .intro {
+    max-width: 750px;
+    font-size: 1.2em;
+    margin: 30px auto;
+  }
+  .imageContainer {
+    height: 280px;
+  }
+}
 
+/* @media (max-width: 760px) { } */

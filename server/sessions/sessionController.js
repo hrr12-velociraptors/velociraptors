@@ -77,8 +77,8 @@ module.exports.registerSession = function(req, res) {
   var data = {
     from: 'learnitnow@learnitnow.herokuapp.com',
     to: [req.body.tuteeEmail, req.body.tutorEmail],
-    subject: 'Session Registration',
-    html: 'Hello, thank you for registering for the session. This is your hangout link: ' + req.body.link + '.'
+    subject: 'Session Registration - ' + req.body.topic,
+    html: 'Hey, this is the confirmation email for your Learn It Now! session about ' + req.body.topic + '. This is your session link: ' + req.body.link + '. Thanks for signing up!'
   };
   
   mailgun.messages().send(data, function (err, body) {

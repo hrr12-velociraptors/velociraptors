@@ -97,16 +97,12 @@ a:hover {
   width: 985px;
   margin: 30px auto 10px;
 }
-
-
-
-.sessions {
+.sessionContainer {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
 .session {
+  font-family: Hind, sans-serif;
   overflow: hidden;
   list-style: none;
   background-color: #efefef;
@@ -118,10 +114,6 @@ a:hover {
   height: 500px;
   position: relative;
   border: 1px solid #ccc;
-}
-.sessionInfo {
-  list-style: none;
-  padding: 15px;
 }
 .photo {
   border-radius: 10px 10px 0 0;
@@ -137,55 +129,39 @@ a:hover {
 .description {
   margin-bottom: 20px;
 }
-
 .tutor {
   margin-bottom: 20px;
 }
-.button {
-  float: right;
-  background-color: #666;
-  color: #fff;
-  padding: 8px 15px;
+.registration input {
+  width: 120px;
+  font-family: Hind, sans-serif;
+  font-size: 1.05em;
   border-radius: 5px;
-  margin-top: 20px;
-  cursor: pointer;
+  padding: 5px 8px;
+  margin-right: 5px;
 }
 .session-full {
   position: absolute;
   bottom: 21px;
   right: 23px;
-  font-family: Hind, sans-serif;
   padding: 7px 12px;
+}
+.button {
+  font-family: Hind, sans-serif;
+  font-size: 1.05em;
+  font-weight: 600;
   background-color: #1d5268;
   color: #fff;
-  font-weight: 600;
   border-radius: 5px;
-  font-size: 1.05em;
 }
 .registration {
   position: absolute;
   bottom: 21px;
   right: 23px;
-  font-family: Hind, sans-serif;
-}
-.registration input {
-  font-size: 1.05em;
-  border-radius: 5px;
-  padding: 5px 8px;
-  width: 120px;
-  margin-right: 5px;
-  font-family: Hind, sans-serif;
 }
 .registration button {
-  font-size: 1em;
-  border-radius: 5px;
   padding: 6px 12px;
-  font-weight: 600;
-  font-family: Hind, sans-serif;
-  background-color: #1d5268;
-  color: #fff;
   border: 0;
-  font-size: 1.05em;
 }
 
 /***** form styles *****/

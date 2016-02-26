@@ -1,21 +1,24 @@
 
 <div ng-app="myApp">
-<div id='signup'>
-  <h1>Sign Up</h1>
+<div class="page-title"></div>
+<div class="small-container" id='signup'>
+  <h1 class="subhead">Sign Up</h1>
   <form name="signupForm" ng-submit='signup(user)'>
-    <label>Name </label>
+    <label>Name </label><br>
     <input type='text' ng-model='user.username' required>
     <br>
     <br>
-    <label>Email </label>
+    <label>Email </label><br>
     <input type='text' ng-model='user.email' required>
     <br>
     <br>
-    <label>Password </label>
+    <label>Password </label><br>
     <input type="password" ng-model='user.password' required><br>
     <br>
-    <button class="submit">Sign up</button>
+    <button class="submit">sign up</button>
   </form>
+  <br>
+  <br>
   <p>If you already have an account, <a href="#/signin">sign in</a> here.  
 </div>
 </div>

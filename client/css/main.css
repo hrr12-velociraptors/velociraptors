@@ -21,6 +21,20 @@ body {
   background-image: url("../images/background.gif");
   height: 350px;
 }
+.page-title {
+  background-color: #a4482c;
+  width: 100%;
+  text-align: center;
+  border-top: 7px solid #993e22;
+  border-bottom: 7px solid #993e22;
+  margin: 0;
+  height: 80px;
+}
+.small-container {
+  max-width: 840px;
+  margin: 50px auto;
+  font-size: 1.3em;
+}
 .intro {
   max-width: 900px;
   margin: 55px auto;
@@ -49,6 +63,15 @@ body {
   margin-top: 35px;
   margin-left: 130px;
   font-family: Play, sans-serif;
+}
+.subhead {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #507484;
+  margin-bottom: 30px;
+}
+.category {
+  margin-bottom: 40px;
 }
 a {
   text-decoration: none;
@@ -149,6 +172,16 @@ old styles
 .time {
 
 }
+.small-container input {
+  color: #666;
+  padding: 10px;
+}
+textarea {
+  color: #666;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
 .tutor {
   margin-bottom: 20px;
 }
@@ -198,6 +231,7 @@ old styles
   border: 0;
   font-size: 1.05em;
 }
+
 
 /*
 datepicker styles

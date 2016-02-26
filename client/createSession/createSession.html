@@ -1,20 +1,17 @@
-<div id='createSession'>
-  <h1>Create Session</h1>
+<div class="page-title"></div>
+<div class="small-container" id='createSession'>
+  <h1 class="subhead">Create Session</h1>
   <form name="createSessionForm" ng-submit='createSession(session)'>
     <label>Topic</label><br>
     <input type='text' ng-model='session.topic' required>
     <br>
     <br>
     <label>Description</label><br>
-    <input type='textarea' cols="40" rows="10" style="width:200px; height:50px;" ng-model='session.description' required>
-    <!-- <br>
-    <br>
-    <label>Tutor</label><br>
-    <input type='text' ng-model='session.tutor' required> -->
+    <textarea cols="40" style="width:400px; height:150px;" maxLength="255" ng-model='session.description' required></textarea>
     <br>
     <br>
-    <label>Category</label>
-    <select ng-model="session.category">
+    <label>Category &nbsp;&nbsp;</label>
+    <select class="category" ng-model="session.category">
       <option value="Programming" selected>Programming</option>
       <option value="Language">Language</option>
       <option value="Design">Design</option>
@@ -22,11 +19,11 @@
       <option value="Wellness">Wellness</option>
       <option value="Cooking">Cooking</option>
     </select>
-       
-    <h4>Standard date-picker</h4>
+    <br>   
+    <label>Date </label>
     <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
 
-    &nbsp;&nbsp;<label>Time</label>
+    &nbsp;&nbsp;<label>Time&nbsp;&nbsp;</label>
     <select ng-model="time">
       <option value="12:00:00">12:00 PM</option>
       <option value="12:30:00">12:30 PM</option>
@@ -79,7 +76,6 @@
     </select>
     <br>
     <br>
-    <button class="submit">Create session</button>
-
+    <button class="submit">create session</button>
   </form>
 </div>

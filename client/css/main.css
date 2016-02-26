@@ -48,7 +48,7 @@ a:hover {
 .bold {
   font-weight: 600;
 }
-.image-container {
+.imageContainer {
   background-color: #a4482c;
   text-align: center;
   border-top: 7px solid #a4482c;
@@ -64,19 +64,7 @@ a:hover {
   color: #ffefea;
   line-height: 2;
 }
-
-
-
-.sessions {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.featured {
-  height: 70px;
-  width: 985px;
-  margin: 30px auto 10px;
-}
-.filters {
+.filtersContainer {
   max-width: 710px;
   height: 50px;
   margin: 0 auto;
@@ -85,33 +73,36 @@ a:hover {
   background-color: rgba(255, 255, 255, .2);
   border: 1px solid #a4482c;
 }
-.filter-box {
+.filterBox {
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #a4482c;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+.keywordFilter {
   height: 42px;
   width: 258px;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 2px solid #a4482c;
-  display: inline-block;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  padding-left: 14px;
-  padding-bottom: 3px;
+  padding: 3px 0 0 14px;
   font-size: 1.15em;
 }
-.date-box {
+.dateFilter {
   height: 33px;
   width: 194px;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 2px solid #a4482c;
-  display: inline-block;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  margin-bottom: 0;
   padding: 12px 15px 1px;
   font-size: 1.2em;
+}
+.featured {
+  width: 985px;
+  margin: 30px auto 10px;
+}
+
+
+
+.sessions {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 

@@ -1,7 +1,7 @@
 
-<div class="image-container">
+<div class="imageContainer">
   <p class="intro">Share your knowledge or learn something new. It’s fun and easy to connect in<br>30-minute, one-on-one tutoring sessions. If you have a skill to share, sign up and create a session.<br>If you want to learn, find a topic that interests you, enter your email, and click register.</p>
-  <div class="filters">
+  <div class="filtersContainer">
     <div class="select">
       <span class="arrow"></span>
       <select class="categories" ng-model="filterOptions">
@@ -16,8 +16,8 @@
       </select>
     </div>
     <div class="filter">
-      <input type="search" class="filter-box" ng-model="filterBox" placeholder="Type keyword to filter sessions..."></input>
-      <div class="date-box">
+      <input type="search" class="filterBox keywordFilter" ng-model="filterBox" placeholder="Type keyword to filter sessions..."></input>
+      <div class="filterBox dateFilter">
         <p>Filter by day: &nbsp;<a href="" ng-click="filterType = 'all'">All</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" ng-click="filterType = 'day'">Today</a></p>
       </div>
     </div>

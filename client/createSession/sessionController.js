@@ -4,7 +4,6 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.getSessions = function() {
     Session.getSessions()
     .then(function(sessions) {
-      console.log('All Sessions: ', sessions);
       $scope.sessions = sessions;
     });
   };
@@ -12,21 +11,18 @@ myApp.controller('SessionController', function($scope, Session) {
   $scope.isClicked = false;
 
   $scope.register = function(session, tuteeEmail){
-    // var session = $scope.sessions[index];
-    console.log('Session being registered: ', session)
 
     // send an email to user and register them
     var registerInfo = {tuteeEmail: tuteeEmail, link: session.link, tutorEmail: session.User.email};
-    // console.log('REGISTER INFO - >',registerInfo);
     Session.register(registerInfo);
 
-    // updating status of session in the server
+    // when someone registers for a session, status of session changes to true
     var updateInfo = {id: session.id, status: true };
     Session.updateStatus(updateInfo).then(function(updatedSession){
       $scope.getSessions();
     });
   };
-
+  //logic for filtering sessions by all vs. today
   $scope.filterType = 'all';
   $scope.sessionFilter = function (session) {
     if (session.startTime) {
@@ -41,7 +37,7 @@ myApp.controller('SessionController', function($scope, Session) {
       return true;
     }
   };
-  
+  //format time for display on session card
   $scope.displayTime = function(time) {
     time = time.substring(0,16).split('T').join(' at ');
     return time += ' PST';
@@ -51,7 +47,7 @@ myApp.controller('SessionController', function($scope, Session) {
 .controller('CreateSessionController', function($scope, Session, Auth, $window) {
   $scope.session = {};
   $scope.myDate = new Date();
-
+  //take session form data, format it, send it to server
   $scope.createSession = function(session) {
     var date = $scope.myDate.toString().split(' ');
     var months = {Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
@@ -61,9 +57,11 @@ myApp.controller('SessionController', function($scope, Session) {
 
     session.startTime = year + '-' + month + '-' + day + ' ' + $scope.time;
     Auth.getSignedInUser().then(function(user){
+      //set relationship between signed-in user's id and the session record
       session.UserId = user.data.UserId;
 
       Session.createSession(session).then(function(){
+        // redirect
         $window.location.href = '/#/';
       });
     });
@@ -74,6 +72,7 @@ myApp.controller('SessionController', function($scope, Session) {
     if (Auth.getLoggedIn()){
       $scope.$emit('loggedIn');
     } else {
+      // redirect
       $window.location.href = '/#/signin';
     }
   };

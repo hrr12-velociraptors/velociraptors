@@ -13,11 +13,11 @@ module.exports.addSession = function(req, res){
     if (err) {
       console.error(err);
       return;
-    }
+    };
     req.body.link = ("https://appear.in" + JSON.parse(response.buffer).roomName);
     Session.create(req.body).then(function(session) {
       res.send(session);
-    })
+    });
     .catch(function(err) {
       console.error('Error creating session: ', err);
     });
@@ -51,6 +51,7 @@ module.exports.updateStatus = function(req, res){
     });
   });
 };
+// this function hasn't been tested
 module.exports.deleteSession = function(req, res){
   Session.findById(req.id).then(function(session){
     return session.destroy();
@@ -66,6 +67,7 @@ module.exports.checkAuth = function(req, res, next) {
     res.send('Please sign in to create a session.');
   }
 };
+//set mailgun key for local or heroku deployment
 if (process.env.DEPLOYED === 'true'){
   var APIKEY = process.env.MAILGUN_API_KEY
   var DOMAIN = process.env.MAILGUN_DOMAIN
@@ -77,18 +79,18 @@ if (process.env.DEPLOYED === 'true'){
 module.exports.registerSession = function(req, res) {
   var mailgun = new Mailgun({ apiKey: APIKEY, domain: DOMAIN });
   
-  var dataTutee = {
+  var data = {
     from: 'learnitnow@learnitnow.herokuapp.com',
     to: [req.body.tuteeEmail, req.body.tutorEmail],
     subject: 'Session Registration',
     html: 'Hello, thank you for registering for the session. This is your hangout link: ' + req.body.link + '.'
   };
   
-  mailgun.messages().send(dataTutee, function(err, body) {
+  mailgun.messages().send(data, function(err, body) {
     if (err) {
       res.send('error', { error: err });
     } else {
-      res.send('submitted', { email: req.body.tuteeEmail });
+      res.send('submitted');
     }
   });
 };

@@ -5,15 +5,16 @@
   font-size: 10px;
   position: relative;
   display: inline-block;
+  float: left;
 }
 .select select {
   outline: none;
   -webkit-appearance: none;
   display: block;
-  padding: .6em 2.8em .65em .7em;
+  padding: .75em 2.9em .6em 1em;
   margin: 0;
   transition: border-color 0.2s;
-  border: 2px solid #993e22;
+  border: 2px solid #a4482c;
   border-radius: 5px;
   background: #fff;
   color: #555;
@@ -35,10 +36,10 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: 12px;
+  right: 14px;
   margin-top: -5px;
   pointer-events: none;
-  border-top: 10px solid #993e22;
+  border-top: 10px solid #a4482c;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -46,7 +47,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: 16px;
+  right: 18px;
   margin-top: -5px;
   pointer-events: none;
   border-top: 6px solid #fff;

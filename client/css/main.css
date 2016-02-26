@@ -6,8 +6,8 @@ body {
   font-size: .9em;
   font-family: Hind, sans-serif;
   line-height: 1.5;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/*  -moz-box-sizing: border-box;
+  box-sizing: border-box;*/
 }
 .container {
   width: 100%;
@@ -66,13 +66,45 @@ a {
   width: 850px;
   margin: 30px auto;
 }
-.filter {
-  height: 30px;
-  width: 300px;
+.filters {
+  max-width: 716px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, .2);
+  border: 1px solid #a4482c;
+}
+.filter-box {
+  height: 42px;
+  width: 258px;
   border-radius: 5px;
   background-color: #fff;
-  border: 2px solid #993e22;
+  border: 2px solid #a4482c;
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  padding-left: 14px;
+  padding-bottom: 3px;
+  font-size: 1.15em;
 }
+.date-box {
+  height: 33px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #a4482c;
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 0;
+  padding: 12px 15px 1px;
+  font-size: 1.2em;
+}
+
+
 
 /*
 old styles

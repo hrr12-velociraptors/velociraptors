@@ -1,6 +1,6 @@
 # Learn it Now!
 
-> A live one-on-one knowledge sharing platform.
+ A live one-on-one knowledge sharing platform.
 
 ## Team
 
@@ -46,6 +46,7 @@ bower install
 #### Create Database
 
 mysql.server start
+
 CREATE DATABASE learnitnowdb
 
 ####  Set up Mailgun

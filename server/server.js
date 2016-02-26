@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000;
 
 require('./config/middleware.js')(app,express);
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('Velociraptors server listening on port ' + port);
 }); 
 

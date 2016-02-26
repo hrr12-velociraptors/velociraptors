@@ -1,12 +1,13 @@
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../../db/models.js').User;
 
+// checks database for user when user tries to sign in
 module.exports = new LocalStrategy({
     usernameField: 'email'
   },
-  function(email, password, done) {
+  function (email, password, done) {
     User.findOne({ where: { email: email } })
-      .then(function(user) {
+      .then(function (user) {
         if (!user) {
           return done(null, false, { message: 'Username not found!' });
         } else if (!user.validPassword(password)) {

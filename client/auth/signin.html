@@ -1,20 +1,20 @@
 
 <div ng-app="myApp">
-<div class="headerBar"></div>
-<div class="formContainer" id='signin'>
-  <h1 class="subhead">Sign In</h1>
-  <form name="signinForm" ng-submit='signin(user)'>
-    <label>Email </label><br>
-    <input type='text' ng-model='user.email' required>
+  <div class="headerBar"></div>
+  <div class="formContainer" id='signin'>
+    <h1 class="subhead">Sign In</h1>
+    <form name="signinForm" ng-submit='signin(user)'>
+      <label>Email </label><br>
+      <input type='text' ng-model='user.email' required>
+      <br>
+      <br>
+      <label>Password </label><br>
+      <input type="password" ng-model='user.password' required><br>
+      <br>
+      <button class="submit">Sign In</button>
+    </form>
     <br>
     <br>
-    <label>Password </label><br>
-    <input type="password" ng-model='user.password' required><br>
-    <br>
-    <button class="submit">Sign In</button>
-  </form>
-  <br>
-  <br>
-  <p>If you do not have an account, <a href="#/signup">Sign Up</a> here.</p> 
-</div>
+    <p>If you do not have an account, <a href="#/signup">Sign Up</a> here.</p> 
+  </div>
 </div>

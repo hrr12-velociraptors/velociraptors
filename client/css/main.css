@@ -1,3 +1,6 @@
+
+/***** general styles *****/
+
 html {
   padding: 0;
   margin: 20px 0;
@@ -11,7 +14,20 @@ body {
   width: 100%;
   margin: 0;
 }
-.mainHead {
+a {
+  text-decoration: none;
+  color: #1b4f65;
+}
+a:hover {
+  color: #618695;
+}
+.bold {
+  font-weight: 600;
+}
+
+/***** header styles *****/
+
+.mainHeader {
   height: 100px;
   margin: 0 auto;
   color: #1b4f65;
@@ -23,7 +39,7 @@ body {
   top: 25px;
   left: 20px;
 }
-.header {
+.head {
   float: left;
   margin-top: 35px;
   margin-left: 130px;
@@ -37,16 +53,6 @@ body {
   margin-right: 30px;
   font-size: 1.3em;
   margin-top: 69px;
-}
-a {
-  text-decoration: none;
-  color: #1b4f65;
-}
-a:hover {
-  color: #618695;
-}
-.bold {
-  font-weight: 600;
 }
 .imageContainer {
   background-color: #a4482c;
@@ -64,6 +70,9 @@ a:hover {
   color: #ffefea;
   line-height: 2;
 }
+
+/***** filters styles *****/
+
 .filtersContainer {
   max-width: 710px;
   height: 50px;
@@ -97,6 +106,9 @@ a:hover {
   width: 985px;
   margin: 30px auto 10px;
 }
+
+/***** session styles *****/
+
 .sessionContainer {
   max-width: 1200px;
   margin: 0 auto;

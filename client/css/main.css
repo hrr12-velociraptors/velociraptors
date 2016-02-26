@@ -230,20 +230,23 @@ a:hover {
   overflow: hidden;
   list-style: none;
   background-color: #efefef;
-  padding: 25px;
   margin: 20px 23px;
   display: inline-block;
   border-radius: 10px;
-  width: 300px;
-  height: 500px;
+  max-width: 350px;
+  width: 30%;
+  height: 530px;
   position: relative;
   border: 1px solid #ccc;
 }
 .photo {
+  width: 100%;
   border-radius: 10px 10px 0 0;
-  margin-left: -25px;
-  margin-top: -25px;
   margin-bottom: 20px;
+}
+.sessionDetails {
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .topic {
   font-size: 1.3em;
@@ -330,6 +333,14 @@ textarea {
 
 /***** responsive styles *****/
 
+@media (max-width: 1200px) {
+  .session {
+    width: 43%;
+    max-width: 600px;
+    height: 560px;
+  }
+}
+
 @media (max-width: 950px) {
   .intro {
     max-width: 800px;
@@ -346,54 +357,7 @@ textarea {
     height: 280px;
   }
 }
-@media (max-width: 760px) {
-  #introBig {
-    display: none;
-  }
-  #introSmall {
-    display: block;
-    margin: 30px;
-  }
-  .featured {
-    display: none;
-  }
-  .head {
-    font-size: 2em;
-  }
-  .filtersContainer {
-    max-width: 710px;
-    height: 50px;
-    margin: 0 auto;
-    padding: 15px;
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, .2);
-    border: 1px solid #a4482c;
-  }
-  .filterBox {
-    border-radius: 5px;
-    background-color: #fff;
-    border: 2px solid #a4482c;
-    display: block;
-    float: left;
-    margin-left: 10px;
-  }
-  .keywordFilter {
-    height: 42px;
-    width: 258px;
-    padding: 3px 0 0 14px;
-    font-size: 1.15em;
-  }
-  .dateFilter {
-    height: 33px;
-    width: 194px;
-    padding: 12px 15px 1px;
-    font-size: 1.2em;
-  }
-  .featured {
-    display: block;
-    margin: 30px auto 10px;
-    width: 95%;
-    max-width: 985px;
-  }
-}
 
+/*@media (max-width: 760px) {
+  
+}*/

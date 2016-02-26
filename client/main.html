@@ -1,7 +1,6 @@
 
 <div class="imageContainer">
   <p class="intro" id="introBig">Share your knowledge or learn something new. It’s fun and easy to connect in<br>30-minute, one-on-one tutoring sessions. If you have a skill to share, sign up and create a session.<br>If you want to learn, find a topic that interests you, enter your email, and click register.</p>
-  <p class="intro" id="introSmall">Share your knowledge or learn something new. It’s fun and easy to connect in 30-minute, one-on-one tutoring sessions. If you have a skill to share, sign up and create a session. If you want to learn, find a topic that interests you, enter your email, and click register.</p>
   <div class="filtersContainer">
     <div class="select">
       <span class="arrow"></span>
@@ -29,11 +28,13 @@
 <div class="sessionContainer"> 
   <ul class="session" ng-class="session-{{session.category}}" ng-repeat="session in sessions | filter:filterBox | filter:sessionFilter | filter:filterOptions | orderBy:'startTime'">
     <img class="photo" src="images/{{session.category}}.jpg">
-    <li class="topic">{{session.topic}}</li>
-    <li class="description">{{session.description}}</li>
-    <li class="category"><span class="bold">Category: </span>{{session.category}}</li>
-    <li class="tutor"><span class="bold">Tutor: </span>{{session.User.username}}</li>
-    <li class="time"><span class="bold">{{displayTime(session.startTime)}}</span></li>
+    <div class="sessionDetails">
+      <li class="topic content">{{session.topic}}</li>
+      <li class="description content">{{session.description}}</li>
+      <li class="category content"><span class="bold">Category: </span>{{session.category}}</li>
+      <li class="tutor content"><span class="bold">Tutor: </span>{{session.User.username}}</li>
+      <li class="time content"><span class="bold">{{displayTime(session.startTime)}}</span></li>
+    </div>
     <li class="session-full button" ng-if="session.status===true">Session Full</li>
     <li class="registration" ng-if="session.status===false  || session.status===null"><input ng-model="email" type="text" placeholder="enter email"/><button class="button" ng-click="register(session, email)">Register</button></li>
   </ul>

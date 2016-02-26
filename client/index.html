@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Learn it Now!</title>
+  <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700' rel='stylesheet' type='text/css'>
   <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
-  
+  <link href='css/meyer-reset.css' rel='stylesheet'>
   <link href='css/main.css' rel='stylesheet'>
+  <link href='css/select.css' rel='stylesheet'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
@@ -18,11 +21,13 @@
 <body ng-app="myApp" ng-controller="IndexController">
   <div class="container">
     <header class="mainHead">
+      <img class="clock" src="images/clock.png">
       <h1 class="header"><a href="/#/">Learn it Now!</a></h1>
-      <a href="#/signin" class="button" ng-show="auth.signin">sign in</a>
-      <a href="#/siginout" class="button" ng-show="auth.signout" ng-click="signout()">sign out</a>
-      <a href="#/create" class="button">create session</a>
+      <a href="#/signin" class="nav" ng-show="auth.signin">Sign In</a>
+      <a href="#/siginout" class="nav" ng-show="auth.signout" ng-click="signout()">Sign Out</a>
+      <a href="#/create" class="nav">Create Session</a>
     </header>
+
     <div ng-view></div>
   </div>
 

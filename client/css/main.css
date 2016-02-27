@@ -142,12 +142,16 @@ a:hover {
   display: inline-block;
   float: left;
   margin-left: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .keywordFilter {
   height: 42px;
   width: 258px;
   padding: 3px 0 0 14px;
   font-size: 1.15em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .dateFilter {
   height: 33px;

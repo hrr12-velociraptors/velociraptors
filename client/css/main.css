@@ -114,7 +114,7 @@ a:hover {
 }
 .intro {
   max-width: 900px;
-  margin: 55px auto;
+  margin: 50px auto;
   font-size: 1.45em;
   font-weight: 500;
   color: #ffefea;
@@ -127,10 +127,9 @@ a:hover {
 /***** filters styles *****/
 
 .filtersContainer {
-  max-width: 710px;
-  height: 50px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 20px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, .2);
   border: 1px solid #a4482c;
@@ -140,14 +139,18 @@ a:hover {
   background-color: #fff;
   border: 2px solid #a4482c;
   display: inline-block;
-  float: left;
   margin-left: 10px;
 }
 .keywordFilter {
-  height: 42px;
+  height: 45px;
   width: 258px;
-  padding: 3px 0 0 14px;
-  font-size: 1.15em;
+  padding: 1px 0 0 14px;
+  font-size: 1.1em;
+}
+input.keywordFilter {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-appearance: none; 
 }
 .dateFilter {
   height: 33px;

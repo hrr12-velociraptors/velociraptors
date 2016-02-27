@@ -127,7 +127,7 @@ a:hover {
 /***** filters styles *****/
 
 .filtersContainer {
-  max-width: 737px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 7px;
@@ -147,10 +147,10 @@ a:hover {
   padding: 1px 0 0 14px;
   font-size: 1.1em;
 }
-input.filterBox {
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -webkit-appearance: none;  
+input.keywordFilter {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-appearance: none; 
 }
 .dateFilter {
   height: 33px;

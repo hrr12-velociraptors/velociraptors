@@ -127,7 +127,7 @@ a:hover {
 /***** filters styles *****/
 
 .filtersContainer {
-  max-width: 740px;
+  max-width: 737px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 7px;
@@ -138,8 +138,6 @@ a:hover {
   border-radius: 5px;
   background-color: #fff;
   border: 2px solid #a4482c;
-  -webkit-border-radius: 5px;
-  -webkit-appearance: none;  
   display: inline-block;
   margin-left: 10px;
 }
@@ -148,6 +146,11 @@ a:hover {
   width: 258px;
   padding: 1px 0 0 14px;
   font-size: 1.1em;
+}
+input.filterBox {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;  
 }
 .dateFilter {
   height: 33px;

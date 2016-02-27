@@ -127,7 +127,7 @@ a:hover {
 /***** filters styles *****/
 
 .filtersContainer {
-  max-width: 710px;
+  max-width: 715px;
   height: 50px;
   margin: 0 auto;
   padding: 15px;
@@ -139,12 +139,11 @@ a:hover {
   border-radius: 5px;
   background-color: #fff;
   border: 2px solid #a4482c;
+  -webkit-border-radius: 5px;
+  -webkit-appearance: none;  
   display: inline-block;
   float: left;
   margin-left: 10px;
-}
-input {
-  -webkit-appearance: none;  
 }
 .keywordFilter {
   height: 42px;
